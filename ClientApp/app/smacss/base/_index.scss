@@ -1,0 +1,54 @@
+@import "../utilities/variables/variables";
+
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+body {
+    font-family: $font-family-Roboto;
+    font-weight: $font-weight-regular;
+    -webkit-font-smoothing: auto;
+    text-rendering: optimizeLegibility;
+    color: $text-color-base;
+    font-size: $font-size-body;
+    line-height: $text-line-height-base;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  color: $link-color;
+}
+
+// ---------------------------- Media Queries ------------------------------- //
+
+// @TODO : Need to Refactor col-sm-12, col-md-10, col-lg-10
+@media (max-width: 768px) {
+  .col-sm-12 {
+    width: 100%;
+  }
+  .hide-in-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  body {
+    line-height: normal;
+  }
+  .col-md-10 {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-10 {
+    width: 100%;
+  }
+}
+
+

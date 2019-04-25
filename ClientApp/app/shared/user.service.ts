@@ -8,67 +8,23 @@ import { catchError, tap } from 'rxjs/operators';
 
 @Injectable()
 export class UserService {
+  private usersUrl = 'assets/data/users.json';
   private baseUrl: string;
-  // private usersUrl = 'api/users/users.json';
 
   constructor(private http: HttpClient, private injector: Injector) {
     this.baseUrl = this.injector.get(ORIGIN_URL);
   }
 
-  // getProducts(): Observable<IUser[]> {
-  //   return this.http.get<IUser[]>(this.productUrl).pipe(
-  //     tap(data => console.log('All: ' + JSON.stringify(data))),
-  //     catchError(this.handleError)
-  //   );
-  // }
+  getUsers(): Observable<IUser[]> {
+    return this.http.get<IUser[]>(`${this.baseUrl}/${this.usersUrl}`)
+      .pipe(
+        tap(data => console.log('All: ' + JSON.stringify(data))),
+        catchError(this.handleError)
+      );
+  }
 
-  // getUsers() {
-  //   return this.http.get<IUser[]>(`${this.baseUrl}/api/users`);
-  // }
-
-  getUsers(): IUser[] {
-    return [
-      {
-        'id': 14,
-        'name': 'test'
-      },
-      {
-        'id': 10,
-        'name': 'asd'
-      },
-      {
-        'id': 13,
-        'name': 'asdfasdfasd'
-      },
-      {
-        'id': 12,
-        'name': 'GRIMMR3AP3R'
-      },
-      {
-        'id': 11,
-        'name': 'Gaulomatic'
-      },
-      {
-        'id': 8,
-        'name': 'paonath'
-      },
-      {
-        'id': 7,
-        'name': 'daveo1001'
-      },
-      {
-        'id': 6,
-        'name': 'markwhitfeld'
-      },
-      {
-        'id': 5,
-        'name': 'Ketrex'
-      },
-      {
-        'id': 4,
-        'name': 'LiverpoolOwen'
-      }
-    ];
+  getUsersB() {
+    // return this.http.get<IUser[]>(`${this.baseUrl}/${this.usersUrl}`);
   }
 
   getUser(user: IUser) {
@@ -88,4 +44,17 @@ export class UserService {
       name: newUserName
     });
   }
+
+  private handleError(err: HttpErrorResponse) {
+    // we may send the server to some remote Logger service
+    let errorMessage = '';
+    if (err.error instanceof ErrorEvent) {
+      errorMessage = `An error occurred: ${err.error.message}`;
+    } else {
+      errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
+    }
+    console.error(errorMessage);
+    return throwError(errorMessage);
+  }
+
 }

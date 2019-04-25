@@ -1,0 +1,843 @@
+// --------------------------------------------------------------------------------
+// |           Mixin to generate  Dropdown style for RBC Theme                    |
+// --------------------------------------------------------------------------------
+//@mixin create-dropdown-rbc($image-path, $width: 100%, $dropdown-text-font-size: 16px, $dropdown-menu-bg: #FFFFFF, $dropdown-item-divider-color: #ececec, $dropdown-button-color: #006AC3, $dropdown-item-active-color:#0073CF, $dropdown-item-hover-color: #444444, $dropdown-item-hover-bg-color: #C2DEEA){
+@mixin create-dropdown-rbc($image-path, $width: 100%, $dropdown-class: ".vehicles-dropdown",$dropdown-text-font-size: 16px, $dropdown-menu-bg: #FFFFFF, $dropdown-item-divider-color: #ececec, $dropdown-button-color: #006AC3, $dropdown-item-active-color:#0073CF, $dropdown-item-hover-color: #444444, $dropdown-item-hover-bg-color: #C2DEEA,
+$dropdown-add-btn-font-size: 20px, $dropdown-add-btn-font-weight: 500, $dropdown-add-btn-text-alignment: left, $dropdown-add-btn-text-active-color: #006AC3, $dropdown-add-btn-text-hover-color: #FFFFFF, $dropdown-add-btn-background: #FFFFFF, $dropdown-add-btn-hover-background: #006AC3, $dropdown-add-btn-padding: 34px, $dropdown-add-btn-border-width: 2px, $dropdown-add-btn-border-color: #006AC3) {  
+  .dropdown-wrapper {
+    &#{$dropdown-class} {
+      display: inline-block;
+      width: $width;
+      border: $dropdown-add-btn-border-width;
+
+      &.static {
+        position: static;
+      }
+      &.upwards {
+          top: -238px;
+      }
+      
+      .dropdown {
+        width: 100%;
+        button {
+          width: 100%;
+          padding: 20px 34px;
+
+          $btn-hover-postfix-icon: "";
+         // $text-color: #333, $text-alignment: centre, $font-size: 16px, $background: #fff, $border-color: #ccc, $border-radius: 4px, $hover-text-color: #333, $hover-background: #e6e6e6, 
+         // $active-background: #e6e6e6, $btn-prefix-icon: "", $btn-postfix-icon: "", $btn-hover-prefix-icon: "", $btn-hover-postfix-icon: "", $border-width: 1px, $font-weight: 500
+
+          @include create-button($dropdown-add-btn-text-active-color, $dropdown-add-btn-text-alignment, $dropdown-add-btn-font-size, $dropdown-add-btn-background, $dropdown-add-btn-border-color, 0px, $dropdown-add-btn-text-hover-color, $dropdown-add-btn-hover-background, $dropdown-add-btn-hover-background, "#{$image-path}/vehicles/auto_icon_big_blue.svg", "#{$image-path}/plus_icon.svg", "#{$image-path}/vehicles/auto_icon_big_white.svg", "#{$image-path}/plus_icon_white.svg",  $dropdown-add-btn-border-width, $dropdown-add-btn-font-weight);
+          span{
+              height: 50px;
+              line-height: 50px;
+              &.btn-prefix-icon {
+                height: 50px;
+                width: 50px;
+                background-size: 50px;
+              }
+              &.btn-text {
+                line-height: 50px;
+                margin-left: 10px;
+              }
+              &.btn-postfix-icon {
+                height: 50px;
+              }  
+          }
+        }
+        &.open{
+          button {
+            color: $dropdown-add-btn-text-hover-color;
+            .btn-text {
+              color: $dropdown-add-btn-text-hover-color;    
+            }
+            .btn-prefix-icon {
+              background: url("#{$image-path}/vehicles/auto_icon_big_white.svg") no-repeat left center;
+            }
+            .btn-postfix-icon {
+              background: url("#{$image-path}/plus_icon_white.svg") no-repeat right center;  
+              background-size: 20px;                      
+            }
+          }
+          ul {
+            &.dropdown-menu{
+              display: block;
+            }
+          }
+          .dropdown-toggle {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+          }
+          & > .btn-default {
+            &.dropdown-toggle{
+              background-color:  $dropdown-add-btn-hover-background;
+            }
+          }
+        }
+      }
+      ul {
+        &.dropdown-menu {
+          width: 230PX;
+          position: absolute;
+          top: 94%;
+          right: 35px;
+          left: 70%;
+          z-index: 1000;
+          display: none;
+          min-width: 160px;
+          padding: 0px;
+          margin: 2px 0 0;
+          list-style: none;
+          font-size: $dropdown-text-font-size;
+          text-align: left;
+          background-color: $dropdown-menu-bg;
+          border: 2px solid $dropdown-add-btn-border-color;
+          border-radius: 3px;
+          -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          background-clip: padding-box;
+
+          li {
+            a {
+              background-color:  $dropdown-menu-bg;
+              border-bottom: 1px solid $dropdown-item-divider-color;
+              padding-top: 20px;
+              padding-bottom: 20px;
+              padding-left: 80px;
+              color: $dropdown-item-active-color;
+              font-size: $dropdown-text-font-size;
+              &:hover{
+                background-color: $dropdown-item-hover-bg-color;
+                color: $dropdown-item-hover-color;
+                cursor: pointer;
+              }
+              
+              @include quoter-vehicle-links($dropdown-menu-bg, $dropdown-item-hover-bg-color, $image-path, "big", "blue", "gray", 20px center);
+            }
+            &:last-child {
+              a {
+                border-bottom: 0px;  
+              }
+            }
+          }
+
+          /* this CS forms the triangles */
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            bottom: -10px;
+            right: 20px;
+            width: 20px;
+            height: 20px; 
+            background: #FFFFFF;
+            border-right: $dropdown-add-btn-border-width solid $dropdown-add-btn-border-color;
+            border-bottom: $dropdown-add-btn-border-width solid $dropdown-add-btn-border-color;
+            -moz-transform:rotate(45deg);
+            -webkit-transform:rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen  and (max-width: 600px) {
+    // .dropdown-wrapper.vehicles-dropdown .dropdown button
+    .dropdown-wrapper{
+      &.vehicles-dropdown {
+        position: relative;
+        top: 0px;
+        &.upwards {
+          
+          ul {
+            &.dropdown-menu {
+              left: 0px;
+              top: -300px;
+              width: 100%;
+              @include box-shadow(1px -3px 12px rgba(0, 0, 0, 0.175));
+            }
+          }
+        }
+        .dropdown {
+          display: block;
+          button {
+            padding: 16px 34px;
+            span {
+
+              height: 50px;
+              line-height: 50px;
+              &.btn-prefix-icon {
+                height: 50px;
+                width: 50px;
+                background-size: 50px;
+              }
+              &.btn-text {
+                line-height: 50px;
+                margin-left: 10px;
+              }
+              &.btn-postfix-icon {
+                height: 50px;
+              }
+            }
+          }
+          .btn-default {
+            .dropdown-toggle {
+              padding: 20px 0px;
+            }
+          }
+          .dropdown-menu {
+            width: 100%;
+            top: 35px;
+            li {
+              a {
+
+                background:  $dropdown-menu-bg;
+                padding-left: 40%;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                &:hover{
+                  background-color: $dropdown-item-hover-bg-color;
+                }
+                @include quoter-vehicle-links($dropdown-menu-bg, $dropdown-item-hover-bg-color, $image-path, "big", "blue", "gray", 15% center, 55px);
+                //.dropdown-wrapper.vehicles-dropdown .dropdown .dropdown-menu li a.auto
+                background-size: 55px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .no-mb-pad {
+      padding: 0px;
+    }
+  }
+  @media only screen  and (min-width: 601px) { 
+    .dropdown-wrapper{
+      &.vehicles-dropdown {
+        &.upwards {
+          ul {
+            &.dropdown-menu {
+              top: -300px;
+              @include box-shadow(1px -3px 12px rgba(0, 0, 0, 0.175));
+            }
+          }
+        }    
+      }
+    }
+  }
+}
+
+
+
+// --------------------------------------------------------------------------------
+// |           Mixin to generate  Dropdown style for S & Y Theme                  |
+// --------------------------------------------------------------------------------
+
+@mixin create-dropdown-sy($image-path, $width: 100%, $dropdown-class: ".vehicles-dropdown", $dropdown-btn-prefix-icon-color: "blue", $dropdown-btn-postfix-icon-color: "blue", $dropdown-text-font-size: 16px, $dropdown-menu-bg: #FFFFFF, $dropdown-item-divider-color: #ececec, $dropdown-button-color: #006AC3, $dropdown-item-active-color:#0073CF, $dropdown-item-hover-color: #444444, $dropdown-item-hover-bg-color: #C2DEEA,
+$dropdown-add-btn-font-size: 20px, $dropdown-add-btn-font-weight: 500, $dropdown-add-btn-text-alignment: left, $dropdown-add-btn-text-active-color: #006AC3, $dropdown-add-btn-text-hover-color: #FFFFFF, $dropdown-add-btn-background: #FFFFFF, $dropdown-add-btn-hover-background: #006AC3, $dropdown-add-btn-padding: 34px, $dropdown-add-btn-border-width: 2px, $dropdown-add-btn-border-color: #006AC3) {
+  .dropdown-wrapper {
+    &#{$dropdown-class} {
+      display: inline-block;
+      width: $width;
+      border: $dropdown-add-btn-border-width;
+      &.static {
+        position: static;
+      }
+      &.upwards {
+        top: -238px;
+      }
+
+      .dropdown {
+        width: 100%;
+
+        button {
+          width: 100%;
+          padding: 20px 34px;
+
+          $btn-hover-postfix-icon: "";
+          $btn-prefix-icon: "#{$image-path}icon-auto-#{$dropdown-btn-prefix-icon-color}.svg";
+          $btn-postfix-icon: "#{$image-path}icon-plus-#{$dropdown-btn-postfix-icon-color}.svg";
+          $btn-hover-prefix-icon: "#{$image-path}icon-auto-#{$dropdown-btn-prefix-icon-color}.svg";
+          $btn-hover-postfix-icon: "#{$image-path}icon-plus-#{$dropdown-btn-postfix-icon-color}.svg";
+
+          //@include create-button($dropdown-add-btn-text-active-color, $dropdown-add-btn-text-alignment, $dropdown-add-btn-font-size, $dropdown-add-btn-background, $dropdown-add-btn-border-color, 0px, $dropdown-add-btn-text-hover-color, $dropdown-add-btn-hover-background, $dropdown-add-btn-hover-background,
+          //        "#{$image-path}icon-auto-blue.svg", "#{$image-path}icon-plus-blue.svg", "#{$image-path}icon-auto-blue.svg", "#{$image-path}icon-plus-blue.svg",  $dropdown-add-btn-border-width, $dropdown-add-btn-font-weight);
+          @include create-button($dropdown-add-btn-text-active-color, $dropdown-add-btn-text-alignment, $dropdown-add-btn-font-size, $dropdown-add-btn-background, $dropdown-add-btn-border-color, 0px, $dropdown-add-btn-text-hover-color, $dropdown-add-btn-hover-background, $dropdown-add-btn-hover-background, $btn-prefix-icon, $btn-postfix-icon, $btn-hover-prefix-icon, $btn-hover-postfix-icon,  $dropdown-add-btn-border-width, $dropdown-add-btn-font-weight);
+
+          &:hover {
+            background-color: $dropdown-add-btn-hover-background;
+            border-color: #444444;
+          }
+          &:focus,
+          &:active {
+            background-color: $dropdown-add-btn-hover-background;
+            border-color: #44c0ff;
+          }
+          span{
+            height: 50px;
+            line-height: 50px;
+            &.btn-prefix-icon {
+              height: 50px;
+              width: 50px;
+            }
+            &.btn-text {
+              line-height: 50px;
+              margin-left: 10px;
+            }
+            &.btn-postfix-icon {
+              height: 50px;
+            }
+          }
+        }
+        &.open{
+          button {
+            color: $dropdown-add-btn-text-hover-color;
+            .btn-text {
+              color: $dropdown-add-btn-text-hover-color;
+            }
+            .btn-prefix-icon {
+              background: url("#{$image-path}icon-auto-#{$dropdown-btn-prefix-icon-color}.svg") no-repeat left center;
+            }
+            .btn-postfix-icon {
+              background: url("#{$image-path}icon-plus-#{$dropdown-btn-postfix-icon-color}.svg") no-repeat right center;
+              background-size: 20px;
+            }
+          }
+          ul {
+            &.dropdown-menu{
+              display: block;
+            }
+          }
+          .dropdown-toggle {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+          }
+          & > .btn-default {
+            &.dropdown-toggle{
+              background-color:  $dropdown-add-btn-hover-background;
+            }
+          }
+        }
+      }
+      ul {
+        &.dropdown-menu {
+          width: 230px;
+          position: absolute;
+          top: 94%;
+          right: 35px;
+          left: 70%;
+          z-index: 1000;
+          display: none;
+          min-width: 160px;
+          padding: 0px;
+          margin: 2px 0 0;
+          list-style: none;
+          font-size: $dropdown-text-font-size;
+          text-align: left;
+          background-color: $dropdown-menu-bg;
+          border: 2px solid $dropdown-add-btn-border-color;
+          border-radius: 3px;
+          -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          background-clip: padding-box;
+
+          li {
+            a {
+              background-color:  $dropdown-menu-bg;
+              border-bottom: 1px solid $dropdown-item-divider-color;
+              padding-top: 20px;
+              padding-bottom: 20px;
+              padding-left: 80px;
+              color: $dropdown-item-active-color;
+              font-size: $dropdown-text-font-size;
+              &:hover{
+                background-color: $dropdown-item-hover-bg-color;
+                color: $dropdown-item-hover-color;
+                cursor: pointer;
+              }
+
+              @include quoter-vehicle-links($dropdown-menu-bg, $dropdown-item-hover-bg-color, '../images/icons', "big", "blue", "gray", 20px center);
+            }
+            &:last-child {
+              a {
+                border-bottom: 0px;
+              }
+            }
+          }
+
+          /* this CS forms the triangles */
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            bottom: -10px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            background: #FFFFFF;
+            border-right: $dropdown-add-btn-border-width solid $dropdown-add-btn-border-color;
+            border-bottom: $dropdown-add-btn-border-width solid $dropdown-add-btn-border-color;
+            -moz-transform:rotate(45deg);
+            -webkit-transform:rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen  and (max-width: 600px) {
+    // .dropdown-wrapper.vehicles-dropdown .dropdown button
+    .dropdown-wrapper{
+      &.vehicles-dropdown {
+        position: relative;
+        top: 0px;
+        &.upwards {
+
+          ul {
+            &.dropdown-menu {
+              left: 0px;
+              top: -300px;
+              width: 100%;
+              @include box-shadow(1px -3px 12px rgba(0, 0, 0, 0.175));
+            }
+          }
+        }
+        .dropdown {
+          display: block;
+          button {
+            padding: 16px 34px;
+            span {
+
+              height: 50px;
+              line-height: 50px;
+              &.btn-prefix-icon {
+                height: 50px;
+                width: 50px;
+                background-size: 50px;
+              }
+              &.btn-text {
+                line-height: 50px;
+                margin-left: 10px;
+              }
+              &.btn-postfix-icon {
+                height: 50px;
+              }
+            }
+          }
+          .btn-default {
+            .dropdown-toggle {
+              padding: 20px 0px;
+            }
+          }
+          .dropdown-menu {
+            width: 100%;
+            top: 35px;
+            li {
+              a {
+
+                background:  $dropdown-menu-bg;
+                padding-left: 40%;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                &:hover{
+                  background-color: $dropdown-item-hover-bg-color;
+                }
+                @include quoter-vehicle-links($dropdown-menu-bg, $dropdown-item-hover-bg-color, '../images/icons', "big", "blue", "gray", 15% center, 55px);
+                //.dropdown-wrapper.vehicles-dropdown .dropdown .dropdown-menu li a.auto
+                background-size: 55px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .no-mb-pad {
+      padding: 0px;
+    }
+  }
+  @media only screen  and (min-width: 601px) {
+    .dropdown-wrapper{
+      &.vehicles-dropdown {
+        &.upwards {
+          ul {
+            &.dropdown-menu {
+              top: -335px;
+              @include box-shadow(1px -3px 12px rgba(0, 0, 0, 0.175));
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// --------------------------------------------------------------------------------
+// |           Mixin to generate  Dropdown style for Leafs Theme                  |
+// --------------------------------------------------------------------------------
+
+@mixin create-dropdown-leafs($image-path: "../images/leafs/icons/", $width: 100%, $dropdown-class: ".vehicles-dropdown", $dropdown-btn-prefix-icon-color: "blue", $dropdown-btn-postfix-icon-color: "blue", $dropdown-text-font-size: 16px, $dropdown-menu-bg: #FFFFFF, $dropdown-item-divider-color: #ececec, $dropdown-button-color: #006AC3, $dropdown-item-active-color:#0073CF, $dropdown-item-hover-color: #444444, $dropdown-item-hover-bg-color: #C2DEEA,
+$dropdown-add-btn-font-size: 20px, $dropdown-add-btn-font-weight: 500, $dropdown-add-btn-text-alignment: left, $dropdown-add-btn-text-active-color: #006AC3, $dropdown-add-btn-text-hover-color: #FFFFFF, $dropdown-add-btn-background: #FFFFFF, $dropdown-add-btn-hover-background: #006AC3, $dropdown-add-btn-padding: 34px, $dropdown-add-btn-border-width: 2px, $dropdown-add-btn-border-color: #006AC3) {
+  @include create-dropdown-sy($image-path, $width, $dropdown-class, $dropdown-btn-prefix-icon-color, $dropdown-btn-postfix-icon-color, $dropdown-text-font-size, $dropdown-menu-bg, $dropdown-item-divider-color, $dropdown-button-color, $dropdown-item-active-color, $dropdown-item-hover-color, $dropdown-item-hover-bg-color,
+  $dropdown-add-btn-font-size, $dropdown-add-btn-font-weight, $dropdown-add-btn-text-alignment, $dropdown-add-btn-text-active-color, $dropdown-add-btn-text-hover-color, $dropdown-add-btn-background, $dropdown-add-btn-hover-background, $dropdown-add-btn-padding, $dropdown-add-btn-border-width, $dropdown-add-btn-border-color);
+}
+
+// --------------------------------------------------------------------------------
+// |           Mixin to generate  Dropdown style for Raptors Theme                  |
+// --------------------------------------------------------------------------------
+
+@mixin create-dropdown-raptors($image-path: "../images/raptors/icons/", $width: 100%, $dropdown-class: ".vehicles-dropdown", $dropdown-btn-prefix-icon-color: "red", $dropdown-btn-postfix-icon-color: "red", $dropdown-text-font-size: 16px, $dropdown-menu-bg: #FFFFFF, $dropdown-item-divider-color: #ececec, $dropdown-button-color: #006AC3, $dropdown-item-active-color:#0073CF, $dropdown-item-hover-color: #444444, $dropdown-item-hover-bg-color: #C2DEEA,
+$dropdown-add-btn-font-size: 20px, $dropdown-add-btn-font-weight: 500, $dropdown-add-btn-text-alignment: left, $dropdown-add-btn-text-active-color: #006AC3, $dropdown-add-btn-text-hover-color: #FFFFFF, $dropdown-add-btn-background: #FFFFFF, $dropdown-add-btn-hover-background: #006AC3, $dropdown-add-btn-padding: 34px, $dropdown-add-btn-border-width: 2px, $dropdown-add-btn-border-color: #006AC3) {
+  @include create-dropdown-sy($image-path, $width, $dropdown-class, $dropdown-btn-prefix-icon-color, $dropdown-btn-postfix-icon-color, $dropdown-text-font-size, $dropdown-menu-bg, $dropdown-item-divider-color, $dropdown-button-color, $dropdown-item-active-color, $dropdown-item-hover-color, $dropdown-item-hover-bg-color,
+          $dropdown-add-btn-font-size, $dropdown-add-btn-font-weight, $dropdown-add-btn-text-alignment, $dropdown-add-btn-text-active-color, $dropdown-add-btn-text-hover-color, $dropdown-add-btn-background, $dropdown-add-btn-hover-background, $dropdown-add-btn-padding, $dropdown-add-btn-border-width, $dropdown-add-btn-border-color);
+}
+// --------------------------------------------------------------------------------
+// |           Mixin to generate  Dropdown style for Aviva Theme                  |
+// --------------------------------------------------------------------------------
+
+@mixin create-dropdown-aviva($width: 100%, $dropdown-button-font-size: 18px, $dropdown-text-font-size: 16px, $dropdown-menu-bg: #FFFFFF, $dropdown-item-divider-color: #ececec, $dropdown-item-active-color: #0073CF, $dropdown-item-hover-color: #444444, $dropdown-item-hover-bg-color: #F5F5F5){
+
+
+// @mixin create-dropdown-aviva($image-path, $width: 100%, $dropdown-class: ".vehicles-dropdown",$dropdown-text-font-size: 16px, $dropdown-menu-bg: #FFFFFF, $dropdown-item-divider-color: #ececec, $dropdown-button-color: #006AC3, $dropdown-item-active-color:#0073CF, $dropdown-item-hover-color: #444444, $dropdown-item-hover-bg-color: #C2DEEA,
+// $dropdown-add-btn-font-size: 20px, $dropdown-add-btn-font-weight: 500, $dropdown-add-btn-text-alignment: left, $dropdown-add-btn-text-active-color: #006AC3, $dropdown-add-btn-text-hover-color: #FFFFFF, $dropdown-add-btn-background: #FFFFFF, $dropdown-add-btn-hover-background: #006AC3, $dropdown-add-btn-padding: 34px, $dropdown-add-btn-border-width: 2px, $dropdown-add-btn-border-color: #006AC3) {  
+
+
+
+
+  .dropdown-wrapper{
+    &.vehicles-dropdown {
+      display: inline-block;
+      width: 100%;
+      position: static;
+      .dropdown{
+        width: 100%;
+        button{
+          width: 100%;
+          padding: 20px 34px;
+          font-size: $dropdown-button-font-size;
+        }
+        &.open{
+          ul {
+            &.dropdown-menu{
+              display: block;
+            }
+          }
+          .dropdown-toggle {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+          }
+          & > .btn-default {
+            &.dropdown-toggle{
+              background-color: #59B337;
+              border-color: #59B337;
+              font-size: $dropdown-button-font-size;
+            }
+          }
+        }
+      }
+      ul {
+        &.dropdown-menu {
+          width: 230PX;
+          position: absolute;
+          top: 100%;
+          right: 35px;
+          left: 70%;
+          z-index: 1000;
+          display: none;
+          min-width: 160px;
+          padding: 0px;
+          margin: 2px 0 0;
+          list-style: none;
+          font-size: $dropdown-text-font-size;
+          text-align: left;
+          background-color: $dropdown-menu-bg;
+          border: 2px solid #59B337;
+          border-radius: 3px;
+          -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          background-clip: padding-box;
+
+          li {
+            a {
+              background-color:  $dropdown-menu-bg;
+              border-bottom: 1px solid $dropdown-item-divider-color;
+              padding-top: 20px;
+              padding-bottom: 20px;
+              padding-left: 80px;
+              color: $dropdown-item-active-color;
+              font-size: $dropdown-text-font-size;
+              &:hover{
+                background-color: $dropdown-item-hover-bg-color;
+                color: $dropdown-item-hover-color;
+                cursor: pointer;
+              }
+              
+              // @include quoter-vehicle-links($dropdown-menu-bg, $dropdown-item-hover-bg-color, $image-path, "big", "blue", "gray", 20px center);
+            }
+            &:last-child {
+              a {
+                border-bottom: 0px;  
+              }
+            }
+          }
+
+          /* this CS forms the triangles */
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            bottom: -10px;
+            right: 20px;
+            width: 20px;
+            height: 20px; 
+            background: #FFFFFF;
+            border-right: 1px solid #59B337;
+            border-bottom: 1px solid #59B337;
+            -moz-transform:rotate(45deg);
+            -webkit-transform:rotate(45deg);
+          }
+      }
+      ul {
+        &.dropdown-menu {
+          // width: 100%;
+          // position: absolute;
+          // top: 94%;
+          // left: 0;
+          // z-index: 1000;
+          // display: none;
+          // float: left;
+          // min-width: 160px;
+          // padding: 0px;
+          // margin: 2px 0 0;
+          // list-style: none;
+          // font-size: 14px;
+          // text-align: left;
+          background-color: #59B337;
+          border: 1px solid #B3B3B3;
+          border-radius: 6px;
+          // -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          // box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          // background-clip: padding-box;
+
+          // li {
+          //   a {
+          //     background-color: $dropdown-menu-bg;
+          //     background-image: none;
+          //     border-bottom: 1px solid $dropdown-item-divider-color;
+          //     padding-top: 8px;
+          //     padding-bottom: 8px;
+          //     padding-left: 15px;
+          //     color: $dropdown-item-active-color;
+          //     font-size: $dropdown-text-font-size;
+          //     &:hover{
+          //       //background-color: #C2DEEA;
+          //       background:  $dropdown-item-hover-bg-color;
+          //       color: $dropdown-item-hover-color;
+          //       cursor: pointer;
+          //     }
+          //   }
+          }
+        }
+      }
+    }
+  }
+
+
+  @media only screen  and (max-width: 600px) {
+    // .dropdown-wrapper.vehicles-dropdown .dropdown button
+    .dropdown-wrapper{
+      &.vehicles-dropdown {
+        position: relative;
+        top: 0px;
+        &.upwards {
+          
+          ul {
+            &.dropdown-menu {
+              left: 0px;
+              top: -300px;
+              width: 100%;
+              @include box-shadow(1px -3px 12px rgba(0, 0, 0, 0.175));
+            }
+          }
+        }
+        .dropdown {
+          display: block;
+          button {
+            padding: 16px 34px;
+            span {
+
+              height: 50px;
+              line-height: 50px;
+              &.btn-prefix-icon {
+                height: 50px;
+                width: 50px;
+                background-size: 50px;
+              }
+              &.btn-text {
+                line-height: 50px;
+                margin-left: 10px;
+                color: #000;
+              }
+              &.btn-postfix-icon {
+                height: 50px;
+              }
+            }
+          }
+          .btn-default {
+            .dropdown-toggle {
+              padding: 20px 0px;
+            }
+          }
+          .dropdown-menu {
+            width: 100%;
+            top: 35px;
+            li {
+              a {
+
+                background:  $dropdown-menu-bg;
+                padding-left: 40%;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                &:hover{
+                  background-color: $dropdown-item-hover-bg-color;
+                }
+                // @include quoter-vehicle-links($dropdown-menu-bg, $dropdown-item-hover-bg-color, $image-path, "big", "blue", "gray", 15% center, 55px);
+                //.dropdown-wrapper.vehicles-dropdown .dropdown .dropdown-menu li a.auto
+                background-size: 55px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .no-mb-pad {
+      padding: 0px;
+    }
+  }
+
+
+  @media only screen  and (min-width: 601px) { 
+    .dropdown-wrapper{
+      &.vehicles-dropdown {
+        &.upwards {
+          ul {
+            &.dropdown-menu {
+              top: -300px;
+              @include box-shadow(1px -3px 12px rgba(0, 0, 0, 0.175));
+            }
+          }
+        }    
+      }
+    }
+  }
+}
+
+@mixin quoter-vehicle-links ($dropdown-menu-bg, $dropdown-item-hover-bg-color, $image-path, $image-size, $image-color, $image-hover-color, $position, $image-sz-px: "") {
+  &.auto{
+    @include background($dropdown-menu-bg, "#{$image-path}/vehicles/auto_icon_#{$image-size}_#{$image-color}.svg", no-repeat, $position);
+    &:hover{
+      @include background($dropdown-item-hover-bg-color, "#{$image-path}/vehicles/auto_icon_#{$image-size}_#{$image-hover-color}.svg", no-repeat, $position);
+    }
+    @if $image-sz-px == "" {
+      @if $image-size == "small" {
+        background-size: 32px;
+      }
+      @if($image-size == "big") {
+        background-size: 48px;
+      }
+    } @else {
+      background-size: $image-sz-px;
+    }
+
+  }
+  &.motorhome, &.motorhome_ac {
+    @include background($dropdown-menu-bg, "#{$image-path}/vehicles/motorhome_icon_#{$image-size}_#{$image-color}.svg", no-repeat, $position);
+    &:hover{
+      @include background($dropdown-item-hover-bg-color, "#{$image-path}/vehicles/motorhome_icon_#{$image-size}_#{$image-hover-color}.svg", no-repeat, $position);
+    }
+    @if $image-sz-px == "" {
+      @if $image-size == "small" {
+        background-size: 32px;
+      }
+      @if($image-size == "big") {
+        background-size: 48px;
+      }
+    } @else {
+      background-size: $image-sz-px;
+    }
+  }
+  &.camper-trailer, &.motorcycle_ac {
+    @include background($dropdown-menu-bg, "#{$image-path}/vehicles/camper_trailer_icon_#{$image-size}_#{$image-color}.svg", no-repeat, $position);
+    &:hover{
+      @include background($dropdown-item-hover-bg-color, "#{$image-path}/vehicles/camper_trailer_icon_#{$image-size}_#{$image-hover-color}.svg", no-repeat, $position);
+    }
+    @if $image-sz-px == "" {
+      @if $image-size == "small" {
+        background-size: 32px;
+      }
+      @if($image-size == "big") {
+        background-size: 48px;
+      }
+    } @else {
+      background-size: $image-sz-px;
+    }
+  }
+  &.motorcycle, &.motorcycle_ac {
+    @include background($dropdown-menu-bg, "#{$image-path}/vehicles/motorcycle_icon_#{$image-size}_#{$image-color}.svg", no-repeat, $position);
+    &:hover{
+      @include background($dropdown-item-hover-bg-color, "#{$image-path}/vehicles/motorcycle_icon_#{$image-size}_#{$image-hover-color}.svg", no-repeat, $position);
+    }
+    @if $image-sz-px == "" {
+      @if $image-size == "small" {
+        background-size: 32px;
+      }
+      @if($image-size == "big") {
+        background-size: 48px;
+      }
+    } @else {
+      background-size: $image-sz-px;
+    }
+  }
+  &.showmobile, &.snowmobile_ac{
+    @include background($dropdown-menu-bg, "#{$image-path}/vehicles/snowmobile_icon_#{$image-size}_#{$image-color}.svg", no-repeat, $position);
+    &:hover{
+      @include background($dropdown-item-hover-bg-color, "#{$image-path}/vehicles/snowmobile_icon_#{$image-size}_#{$image-hover-color}.svg", no-repeat, $position);
+    }
+    @if $image-sz-px == "" {
+      @if $image-size == "small" {
+        background-size: 32px;
+      }
+      @if($image-size == "big") {
+        background-size: 48px;
+      }
+    } @else {
+      background-size: $image-sz-px;
+    }
+    
+  }
+  &.atv, &.all_terrain_vehicle_ac{
+    @include background($dropdown-menu-bg, "#{$image-path}/vehicles/atv_icon_#{$image-size}_#{$image-color}.svg", no-repeat, $position);
+    &:hover{
+      @include background($dropdown-item-hover-bg-color, "#{$image-path}/vehicles/ATV-dark.svg", no-repeat, $position);
+    }
+    @if $image-sz-px == "" {
+      @if $image-size == "small" {
+        background-size: 32px;
+      }
+      @if($image-size == "big") {
+        background-size: 48px;
+      }
+    } @else {
+      background-size: $image-sz-px;
+    }
+  }
+}

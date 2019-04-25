@@ -1,0 +1,186 @@
+// margins
+@mixin generate-margins($left: true, $top: true, $right: true, $bottom: true, $top-bottom: true, $left-right: true, $start: 0, $end:20, $interval: 5, $class-prefix: "mr"){
+  @while $start <= $end{
+    @if $left {
+      /*.#{$class-prefix}-l-#{$start} {
+        margin-left: $start+px;
+      }*/
+      @include margin-variations($start, "left", "l");
+    }
+    @if $right {
+      /*.#{$class-prefix}-r-#{$start} {
+        margin-right: $start+px;
+      }*/
+      @include margin-variations($start, "right", "r");
+    }
+    @if $top {
+      /*.#{$class-prefix}-t-#{$start} {
+        margin-top: $start+px;
+      }*/
+      @include margin-variations($start, "top", "t");
+    }
+    @if $bottom {
+      /*.#{$class-prefix}-b-#{$start} {
+        margin-bottom: $start+px;
+      }*/
+      @include margin-variations($start, "bottom", "b");
+    }
+    @if $top-bottom {
+      /*.#{$class-prefix}-tb-#{$start} {
+        margin-top: $start+px;
+        margin-bottom: $start+px;
+      }*/
+      @include margin-variations($start, "top-bottom", "tb");
+    }
+    @if $left-right {
+      /*.#{$class-prefix}-lr-#{$start} {
+        margin-left: $start+px;
+        margin-right: $start+px;
+      }*/
+      @include margin-variations($start, "left-right", "lr");
+    }
+    .#{$class-prefix}-#{$start} {
+      margin: $start+px;
+    }
+    $start: $start + $interval;
+  }
+}
+
+@mixin margin-variations ($margin: 5, $margin-side: "left", $margin-side-sc: "l", $class-prefix: "mr") {
+  @media only screen  and (min-width: 769px) {
+    .#{$class-prefix}-lg-#{$margin-side-sc}-#{$margin}{
+      @include get-margins($margin-side, $margin);
+    }
+  }
+  @media only screen  and (max-width: 768px) {
+    .#{$class-prefix}-mb-#{$margin-side-sc}-#{$margin}{
+      @include get-margins($margin-side, $margin);
+    }
+  }
+  .#{$class-prefix}-#{$margin-side-sc}-#{$margin}{
+    @include get-margins($margin-side, $margin);
+  }
+}
+
+@mixin get-margins ($margin-side, $margin) {
+  @if ($margin-side == "top-bottom") {
+    margin-top: $margin+px;
+    margin-bottom: $margin+px;
+  } @else if($margin-side == "left-right") {
+    margin-left: $margin+px;
+    margin-right: $margin+px;
+  }
+  @else {
+    margin-#{$margin-side}: $margin+px;
+  }
+}
+
+// paddings
+@mixin generate-paddings($left: true, $top: true, $right: true, $bottom: true, $top-bottom: true, $left-right: true, $start: 0, $end:20, $interval: 5, $class-prefix: "pad"){
+  @while $start <= $end{
+    @if $left {
+      @include padding-variations($start, "left", "l");
+      /*.#{$class-prefix}-l-#{$start} {
+        padding-left: $start+px;
+        &.no-mb-pad {
+          padding: 0px;
+        }
+      }*/
+    }
+    @if $right {
+      @include padding-variations($start, "right", "r");
+      /*.#{$class-prefix}-r-#{$start} {
+        padding-right: $start+px;
+        &.no-mb-pad {
+          padding: 0px;
+        }
+      }*/
+    }
+    @if $top {
+      @include padding-variations($start, "top", "t");
+      /*.#{$class-prefix}-t-#{$start} {
+        padding-top: $start+px;
+        &.no-mb-pad {
+          padding: 0px;
+        }
+      }*/
+    }
+    @if $bottom {
+      @include padding-variations($start, "bottom", "b");
+      /*.#{$class-prefix}-b-#{$start} {
+        padding-bottom: $start+px;
+        &.no-mb-pad {
+          padding: 0px;
+        }
+      }*/
+    }
+    @if $top-bottom {
+      @include padding-variations($start, "top-bottom", "tb");
+      /*.#{$class-prefix}-tb-#{$start} {
+        padding-top: $start+px;
+        padding-bottom: $start+px;
+        &.no-mb-pad {
+          padding: 0px;
+        }
+      }*/
+    }
+    @if $left-right {
+      @include padding-variations($start, "left-right", "lr");
+      /*.#{$class-prefix}-lr-#{$start} {
+        padding-left: $start+px;
+        padding-right: $start+px;
+        &.no-mb-pad {
+          padding: 0px;
+        }
+      }*/
+    }
+    .#{$class-prefix}-#{$start} {
+      padding: $start+px;
+      /*&.no-mb-pad {
+        padding: 0px;
+      }*/
+    }
+    $start: $start + $interval;
+  }
+}
+
+@mixin padding-variations ($padding: 5, $padding-side: "left", $padding-side-sc: "l", $class-prefix: "pad") {
+  @media only screen  and (min-width: 769px) {
+    .#{$class-prefix}-lg-#{$padding-side-sc}-#{$padding}{
+      @include get-paddings($padding-side, $padding);
+    }
+  }
+  @media only screen  and (max-width: 768px) {
+    .#{$class-prefix}-mb-#{$padding-side-sc}-#{$padding}{
+      @include get-paddings($padding-side, $padding);
+    }
+  }
+  .#{$class-prefix}-#{$padding-side-sc}-#{$padding}{
+    @include get-paddings($padding-side, $padding);
+  }
+}
+
+@mixin get-paddings ($padding-side, $padding) {
+  @if ($padding-side == "top-bottom") {
+    padding-top: $padding+px;
+    padding-bottom: $padding+px;
+  } @else if($padding-side == "left-right") {
+    padding-left: $padding+px;
+    padding-right: $padding+px;
+  }
+  @else {
+    padding-#{$padding-side}: $padding+px;
+  }
+}
+
+@mixin generate-margins-mobile-only ($left: true, $top: true, $right: true, $bottom: true, $top-bottom: true, $left-right: true, $start: 0, $end:20, $interval: 5) {
+  @media only screen  and (max-width: 768px) {
+    @include generate-margins($left, $top, $right, $bottom, $top-bottom, $left-right, $start, $end, $interval, "mr-mb");
+  }
+}
+
+@mixin generate-paddings-mobile-only ($left: true, $top: true, $right: true, $bottom: true, $top-bottom: true, $left-right: true, $start: 0, $end:20, $interval: 5) {
+  @media only screen  and (max-width: 768px) {
+    @include generate-paddings($left, $top, $right, $bottom, $top-bottom, $left-right, $start, $end, $interval, "pad-mb");
+  }
+}

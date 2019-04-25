@@ -1,0 +1,98 @@
+@import "border-radius";
+// @mixin create-button($text-color: #333, $text-alignment: centre, $font-size: 16px, $background: #fff, $border-color: #ccc, $border-radius: 4px, $hover-text-color: #333, $hover-background: #e6e6e6, $active-background: #e6e6e6, $btn-prefix-icon: "", $btn-postfix-icon: "", $btn-hover-prefix-icon: "", $btn-hover-postfix-icon: "") {
+@mixin create-button($text-color: #333, $text-alignment: centre, $font-size: 16px, $background: #fff, $border-color: #ccc, $border-radius: 4px, $hover-text-color: #333, $hover-background: #e6e6e6, $active-background: #e6e6e6, $btn-prefix-icon: "", $btn-postfix-icon: "", $btn-hover-prefix-icon: "", $btn-hover-postfix-icon: "", $border-width: 1px, $font-weight: 500) {
+  background: $background;
+  color: $text-color;
+  font-size: $font-size;
+  text-align: $text-alignment;
+  border-width: $border-width;
+  border-color: $border-color;
+  border-style: solid;
+  border-radius: $border-radius;
+
+  &:focus,
+  &.focus {
+    color: $hover-text-color;
+    background-color: $hover-background;
+    border-width: $border-width;
+    border-color: $border-color;
+    border-style: solid;
+    .btn-text {
+      color: $hover-text-color;
+    }
+    @if $btn-hover-prefix-icon != "" {
+      .btn-prefix-icon {
+        background: url("#{$btn-hover-prefix-icon}") no-repeat left center;
+      }
+    }
+    @if $btn-hover-postfix-icon != "" {
+      .btn-postfix-icon {
+        background: url("#{$btn-hover-postfix-icon}") no-repeat right center;
+        background-size: 20px;
+      }
+    }
+  }
+  &:hover {
+    color: $hover-text-color;
+    background-color: $hover-background;
+    border-width: $border-width;
+    border-color: $border-color;
+    border-style: solid;
+    .btn-text {
+      color: $hover-text-color;
+    }
+    @if $btn-hover-prefix-icon != "" {
+      .btn-prefix-icon {
+        background: url("#{$btn-hover-prefix-icon}") no-repeat left center;  
+      }
+    }
+    @if $btn-hover-postfix-icon != "" {
+      .btn-postfix-icon {
+        background: url("#{$btn-hover-postfix-icon}") no-repeat right center;
+        background-size: 20px;
+      }
+    }
+  }
+
+  .btn-text {
+    text-align: $text-alignment;
+    float: left;
+    padding-left: 10px;
+    color: $text-color;
+    font-weight: $font-weight;
+    line-height: 20px;
+    font-size:  $font-size;
+    &:hover {
+      color: $hover-text-color;
+    }
+  }
+
+  @if $btn-prefix-icon {
+    .btn-prefix-icon {
+      background: url("#{$btn-prefix-icon}") no-repeat left center;
+      width: 30px;
+      height: 20px;
+      display: inline-block;
+      float: left;
+    }
+  }
+  @if $btn-postfix-icon {
+    .btn-postfix-icon {
+      background: url("#{$btn-postfix-icon}") no-repeat right center;
+      width: 30px;
+      height: 20px;
+      display: inline-block;
+      float: right;
+      margin-right: 15px;
+      background-size: 20px;
+    }
+  }
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}

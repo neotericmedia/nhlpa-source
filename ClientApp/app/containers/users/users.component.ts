@@ -31,8 +31,10 @@ import { UserService } from '../../shared/user.service';
 export class UsersComponent implements OnInit {
   // users: IUser[];
   users;
+  usersB;
   selectedUser: IUser;
   errorMessage: string;
+  filteredProducts: IUser[];
 
   // Use "constructor"s only for dependency injection
   constructor(private userService: UserService) { }
@@ -46,20 +48,20 @@ export class UsersComponent implements OnInit {
   //   });
   // }
 
-  // ngOnInit(): void {
-  //   this.userService.getUsers().subscribe(
-  //     users => {
-  //       this.users = users;
-  //       console.log(this.users);
-  //     },
-  //     error => this.errorMessage = <any>error
-  //   );
-  // }
-
   ngOnInit(): void {
-    this.users = this.userService.getUsers();
-    console.log(this.users);
+    this.userService.getUsers().subscribe(
+      users => {
+        this.users = users;
+        this.filteredProducts = this.users;
+      },
+      error => this.errorMessage = <any>error
+    );
   }
+
+  // ngOnInit(): void {
+  //   this.users = this.userService.getUsers();
+  //   console.log(this.users);
+  // }
 
   onSelect(user: IUser): void {
     this.selectedUser = user;

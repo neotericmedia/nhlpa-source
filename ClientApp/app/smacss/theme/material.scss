@@ -1,0 +1,140 @@
+@import '~@angular/material/core/theming/all-theme';
+
+@include md-core();
+
+$primary: md-palette($md-deep-purple);
+$accent:  md-palette($md-amber, A200, A100, A400);
+
+$theme: md-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+
+.m2app-dark {
+  $dark-primary: md-palette($md-pink, 700, 500, 900);
+  $dark-accent:  md-palette($md-blue-grey, A200, A100, A400);
+  $dark-warn:    md-palette($md-deep-orange);
+
+  $dark-theme: md-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+  @include angular-material-theme($dark-theme);
+}
+
+
+md-card {
+    padding: 20px 34px 20px 34px !important;
+    font-family: FrutigerLTW01-45Light, "Helvetica Neue", sans-serif !important;
+    border: solid #ececec 1px;
+}
+
+md-card.addPadd {
+  margin-top: 30px;
+  padding: 40px 30px 50px 30px !important;
+}
+
+md-card.addPadd md-input {
+  margin-bottom: 20px;
+}
+
+md2-select {
+   z-index: 10001;
+}
+
+md-card .form-box-element {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+md-card ul, md-card p {
+  line-height: 27px;
+}
+md-card ul {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+md-input {
+    width: 100%;
+    font-weight: 600;
+}
+.md-input-underline {
+    margin-top: 4px;
+    border-top-width: 1px;
+    border-top-style: solid !important;
+}
+md-toolbar.md-primary {
+    background: green;
+}
+md-card {
+    margin-bottom: 30px;
+}
+[md-raised-button].md-primary, [md-fab].md-primary, [md-mini-fab].md-primary {
+    background-color: #2d3196;
+}
+[md-raised-button] {
+    // position: static !important;
+    transform: none !important;
+    z-index: 0;
+}
+.md-button-ripple {
+    position: static !important;
+}
+.md-ripple-background {
+    position: static !important;
+}
+.md-input-placeholder {
+    color: #2d3196;
+}
+.app-spinner[_ngcontent-jkn-1] {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+}
+.md-input-placeholder.md-focused {
+  color: #2d3196;
+}
+.md-input-underline .md-input-ripple {
+    background-color: #2d3196;
+}
+.mdRatios {
+  display: block;
+  margin-bottom: 7px;
+}
+.md-input-underline {
+  border-top-style: solid !important;
+  margin-top: 17px !important;
+}
+
+md2-select .md2-select-container {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.38) !important;
+}
+
+md2-select {
+    font-family: FrutigerLTW01-45Light, "Helvetica Neue", sans-serif !important;
+}
+
+/*.md-input-placeholder {
+    font-size: 1.3em !important;
+    font-weight: 600 !important;
+    font-family: FrutigerLTW01-45Light, "Helvetica Neue", sans-serif !important;
+}
+.md2-select-placeholder {
+    font-size: 1.3em !important;
+    font-weight: 600 !important;
+    font-family: FrutigerLTW01-45Light, "Helvetica Neue", sans-serif !important;
+    padding-bottom: 12px;
+}*/
+
+
+md2-select {
+    position: static !important;
+    z-index: 10;
+
+    .md2-select-menu {
+        top: 10px !important;
+    }
+}
+
+.md2-dialog-header {
+    background: #59b337 !important;
+}
+.md2-dialog-header .close {
+    display: none !important;
+}

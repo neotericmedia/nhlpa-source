@@ -1,0 +1,31 @@
+@mixin background-color-animation ($keyframeName:"", $background-start-color: #CCCCCC, $background-end-color: #ECECEC ) {
+  @if $keyframeName {
+    // background-color-light-gray-pulse
+    @keyframes #{$keyframeName} {
+      0%, 100% {
+        background-color: $background-start-color;
+      }
+      50% {
+        background-color: $background-end-color;
+      }
+    }
+  }
+
+}
+
+@mixin border-background-color-animation ($keyframeName:"", $border-start-color: #CCCCCC, $border-end-color: #ECECEC, $background-start-color: #CCCCCC, $background-end-color: #ECECEC ) {
+  @if $keyframeName {
+    // background-color-light-gray-pulse
+    @keyframes #{$keyframeName} {
+      0%, 100% {
+        border-color: $border-start-color;
+        background-color: $background-start-color;
+      }
+      50% {
+        border-color: $border-end-color;
+        background-color: $background-end-color;
+      }
+    }
+  }
+
+}

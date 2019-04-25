@@ -1,0 +1,20 @@
+@mixin input-shadow ($width: 33px, $height: 33px, $pos-left: -3px, $pos-top: -3px, $border-width: 4px, $border-color: #c3e2fa, $border-radius: 0px) {
+  span {
+    &.shadow {
+      display: none;
+      position: absolute;
+      border-radius: $border-radius;
+      left: $pos-left;
+      top: $pos-top;
+      border: $border-width solid $border-color;
+      width: $width;
+      height: $height;
+    }
+  }
+  &:focus, &:active {
+    span.shadow {
+      display: inline-block;
+      border-radius: $border-radius;
+    }
+  }
+}

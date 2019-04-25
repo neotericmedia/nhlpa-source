@@ -1,0 +1,27 @@
+// ------------------------- Media Mixins  -------------------------
+
+@mixin two-cell-row ($margin-left: 16.6667%, $odd-child-pad-left: 0px, $odd-child-pad-right: 0px, $even-child-pad-left: 0px, $even-child-pad-right: 0px) {
+  .two-cell-row {
+    .cell {
+      &:nth-child(odd) {
+        @if $odd-child-pad-left {
+          padding-left: $odd-child-pad-left;
+        }
+        @if $odd-child-pad-right {
+          padding-right: $odd-child-pad-right;
+        }
+      }
+      &:nth-child(even) {
+        @if $even-child-pad-left {
+          padding-left: $even-child-pad-left;
+        }
+        @if $even-child-pad-right {
+          padding-right: $even-child-pad-right;
+        }
+        @if $margin-left {
+          margin-left: $margin-left;
+        }
+      }
+    }
+  }
+}
