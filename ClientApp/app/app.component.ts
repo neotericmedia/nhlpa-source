@@ -17,7 +17,7 @@ import { LinkService } from './shared/link.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./smacss/app.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit, OnDestroy {

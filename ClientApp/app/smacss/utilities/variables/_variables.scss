@@ -1,208 +1,225 @@
-// Load bootstrap variables
-@import "../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+// @import '../../styles';
+$header-height: 50px;
+$menu-max-width: 25%;
+$navbar-default-bg: #312312;
+$light-orange: #ff8c00;
+$navbar-default-color: $light-orange;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*----------------------------------------------
   | Common Variables                           |
   ----------------------------------------------*/
-$std-nhlpa-font-body: 16px;
+  $std-nhlpa-font-body: 16px;
 
-// Font
-$font-family-Frutiger: FrutigerLTW01-45Light !default;
-$font-family-Roboto: robotoregular !default;
-$font-family-Roboto-light: robotolight !default;
-$font-family-Roboto-thin: robotothin !default;
-
-$font-family-SourceSansPro: source_sans_proregular !default;
-$font-family-SourceSansPro-bold: source_sans_probold !default;
-$font-family-SourceSansPro-light: source_sans_prolight !default;
-$font-family-SourceSansPro-extralight: source_sans_proextralight !default;
-$font-family-SourceSansPro-semibold: source_sans_prosemibold !default;
-$font-family-SourceSansPro-black: source_sans_problack !default;
-
-$font-family-Segment7: segment7standard !default;
-
-
-$font-size-body: $std-nhlpa-font-body !default;
-$font-size-md: floor(($font-size-body * 1.125)) !default; // ~18px;
-$font-size-big: floor(($font-size-body * 1.25)) !default; // ~20px;
-$font-size-lg: floor(($font-size-body * 1.5)) !default; // ~24px;
-$font-size-x-lg: floor(($font-size-body * 1.875)) !default; // ~30px;
-$font-size-y-lg: floor(($font-size-body * 2.0)) !default; // ~32px;
-$font-size-xx-lg: floor(($font-size-body * 2.25)) !default; // ~36px;
-$font-size-xxx-lg: floor(($font-size-body * 3.0)) !default; // ~48px;
-$font-size-xxxx-lg: floor(($font-size-body * 3.75)) !default; // ~60px;
-$font-size-sm: floor(($font-size-body * 0.875)) !default; // ~14px;
-$font-size-x-sm: floor(($font-size-body * 0.75)) !default; // ~12px;
-$font-size-xx-sm: floor(($font-size-body * 0.625)) !default; // ~10px;
-$font-size-tiny: floor(($font-size-body * 0.6875)) !default; // ~11px;
-$font-size-tiny-1: floor(($font-size-body * 0.71875)) !default; // ~11.5px;
-$font-size-h1: $font-size-x-lg; // ~30px
-$font-size-h2: $font-size-lg; // ~24px
-$font-weight-regular: 400 !default;
-
-// Text
-$text-color-base: #333333 !default;
-$text-line-height-base: 1.3571428571 !default;
-
-// ------ Common Color Variables -----
-$color-black: #000000;
-$color-white: #FFFFFF;
-$color-gray-base: $color-black;
-$color-gray-darker: #222222;
-$color-gray-dark: #333333;
-$color-gray: #444444;
-$color-gray-light: #777777;
-$color-gray-lighter: #999999;
-$color-gray-lighter-shade-light: #AAAAAA;
-$color-gray-lighter-shade-lighter: #CCCCCC;
-$color-gray-lighter-shade-lightest: #EEEEEE;
-$color-gray-lighter-shade-custom-1: #ECECEC;
-$color-gray-lighter-shade-custom-2: #A5A5A5;
-$color-gray-lighter-shade-custom-3: #C4C8CC;
-$color-gray-lighter-shade-custom-4: #EDEDED;
-$color-gray-lighter-shade-custom-5: #b3b3b3;
-$color-gray-lighter-shade-custom-6: #F5F5F5;
-$color-gray-lighter-shade-custom-7: #DDDDDD;
-$color-gray-lighter-shade-custom-8: #EAEAEA;
-$color-gray-lighter-shade-custom-9: #E6E6E6;
-
-
-$color-gray-shade-1: #44474B;
-$color-gray-shade-2: #6F6F6F;
-$color-gray-shade-3: #666666;
-$color-gray-shade-4: #50545C;
-$color-gray-shade-5: #5c596d;
-$color-gray-shade-6: #4F4F4F;
-
-
-$color-blue-base: #004FB6;
-$color-blue-dark: #2E51A1;
-$color-blue-dark-shade-1: #0B5590;
-$color-blue-light: #006AC3;
-$color-blue-light-shade-1: #3287CE;
-$color-blue-light-shade-2: #217ECA;
-$color-blue-light-shade-3: #0073CF;
-$color-blue-light-shade-4: #0060A9;
-$color-blue-base-shade-1: #1E62C3;
-
-
-
-
-$color-sky-blue: #6AADE4;
-$color-sky-blue-lighter: #C2DEEA;
-$color-sky-blue-lighter-shade-1: #c3e2fa;
-
-
-$color-yellow-base: #FFD900;
-$color-yellow-light-shade-1: #FEDB00;
-$color-yellow-light-shade-2: #FEEF80;
-$color-yellow-light-shade-3: #FEDF01;
-$color-yellow-light-shade-4: #FFF4B4;
-$color-yellow-dark-shade-1: #EBC400;
-
-
-$color-red-base: #BD2624;
-$color-red-shade-1: #b91a03;
-$color-red-shade-2: #B5071B;
-
-
-
-
-
-
-
-// nhlpa Core palette (Ref# https://standards.nhlpa.com)
-$color-nhlpa-yellow: $color-yellow-base;
-$color-nhlpa-white: $color-white;
-$color-nhlpa-body-gray: #444444;
-$color-nhlpa-defining-gray: #CCCCCC;
-$color-nhlpa-light-gray: #EEEEEE;
-
-// nhlpa Functional palette
-$color-nhlpa-blue: #004FB6;
-$color-nhlpa-green: #4F9F31;
-$color-nhlpa-guide-blue-tint: #E5EDF8;
-$color-nhlpa-red: #BD2624;
-$color-nhlpa-orange: #FFA000;
-
-// nhlpa Accent palette
-$color-nhlpa-dark-blue: #001E60;
-$color-nhlpa-light-blue: #1A61BD;
-$color-nhlpa-dark-green: #0E573F;
-$color-nhlpa-dark-purple: #421B67;
-$color-nhlpa-light-purple: #87378E;
-$color-nhlpa-pink: #C01B83;
-$color-nhlpa-teal: #009AB1;
-
-// ---- Theme specific colors ---
-// nhlpa
-$nhlpa-color-blue: #2E51A1 !default;
-$nhlpa-color-light-blue: #006AC3 !default;
-$nhlpa-color-light-gray: #F5F5F5 !default;
-$nhlpa-color-dark-gray: #444444;
-$nhlpa-color-white: $color-white;
-$nhlpa-color-light-yellow: $color-yellow-light-shade-1;
-$nhlpa-color-yellow: $color-yellow-dark-shade-1;
-
-
-
-//** Global textual link color.
-$link-color:            $color-nhlpa-blue !default;
-$link-hover-color:      darken($link-color, 15%) !default;
-$link-hover-decoration: underline !default;
-
-/*----------------------------------------------
-  | Component Specific Variables               |
-  ----------------------------------------------*/
-
-// --- Header ---
-$header-bg: $color-nhlpa-white !default;
-$header-breads-bg: $nhlpa-color-light-blue !default;
-$header-breads-bg-yellow: $color-nhlpa-yellow !default;
-$header-breads-text-color: $color-nhlpa-white !default;
-
-$header-link-color: $color-nhlpa-white !default;
-$header-link-hover-color: $color-nhlpa-defining-gray !default;
-
-// --- Footer ---
-$footer-bg: $color-gray-shade-4 !default;
-$footer-text-color: $color-nhlpa-white !default;
-$footer-font-size: 0.85em !default;
-
-
-/*----------------------------------------------
-  | Theme Specific Variables                   |
-  ----------------------------------------------*/
-// --- nhlpa ---
-$nhlpa-font-family: $font-family-Roboto;
-$nhlpa-header-breads-bg: $nhlpa-color-blue !default;
-$nhlpa-footer-bg: $color-gray-shade-4 !default;
-$rgc-gi-quoter-bg: $nhlpa-color-light-gray;
-$nhlpa-form-label-font-size: $font-size-sm;
-$nhlpa-form-label-color: #444444;
-$nhlpa-form-input-font-size: $font-size-body;
-$nhlpa-form-input-color: #444444;
-
-// Dropdown variables
-$nhlpa-dropdown-add-btn-font-size: $font-size-big;
-$nhlpa-dropdown-add-btn-font-weight: 500;
-$nhlpa-dropdown-add-btn-text-alignment: left;
-$nhlpa-dropdown-add-btn-text-active-color: $nhlpa-color-light-blue;
-$nhlpa-dropdown-add-btn-text-hover-color: $nhlpa-color-white;
-$nhlpa-dropdown-add-btn-background: $nhlpa-color-white;
-$nhlpa-dropdown-add-btn-hover-background: $nhlpa-color-light-blue;
-$nhlpa-dropdown-add-btn-padding: 34px;
-$nhlpa-dropdown-add-btn-border-width: 2px;
-$nhlpa-dropdown-add-btn-border-color: $nhlpa-color-light-blue;
-$nhlpa-dropdown-add-menu-background: $nhlpa-color-white;
-$nhlpa-dropdown-add-menu-item-divider-color: #ececec;
-$nhlpa-dropdown-add-menu-item-active-color: #0073cf;
-$nhlpa-dropdown-add-menu-item-hover-color: $nhlpa-color-dark-gray;
-$nhlpa-dropdown-add-menu-item-hover-backdround: #c2deea;
-
-// $dropdown-menu-bg: #FFFFFF, $dropdown-item-divider-color: #ececec, $dropdown-button-color: #006AC3, $dropdown-item-active-color:#0073CF, $dropdown-item-hover-color: #444444, $dropdown-item-hover-bg-color: #C2DEEA
-$nhlpa-font-family: $font-family-SourceSansPro;
-
-
-// Image Directory
-$image-root-path: '../';
+  // Font
+  $font-family-Frutiger: FrutigerLTW01-45Light !default;
+  $font-family-Roboto: robotoregular !default;
+  $font-family-Roboto-light: robotolight !default;
+  $font-family-Roboto-thin: robotothin !default;
+  
+  $font-family-SourceSansPro: source_sans_proregular !default;
+  $font-family-SourceSansPro-bold: source_sans_probold !default;
+  $font-family-SourceSansPro-light: source_sans_prolight !default;
+  $font-family-SourceSansPro-extralight: source_sans_proextralight !default;
+  $font-family-SourceSansPro-semibold: source_sans_prosemibold !default;
+  $font-family-SourceSansPro-black: source_sans_problack !default;
+  
+  $font-family-Segment7: segment7standard !default;
+  
+  
+  $font-size-body: $std-nhlpa-font-body !default;
+  $font-size-md: floor(($font-size-body * 1.125)) !default; // ~18px;
+  $font-size-big: floor(($font-size-body * 1.25)) !default; // ~20px;
+  $font-size-lg: floor(($font-size-body * 1.5)) !default; // ~24px;
+  $font-size-x-lg: floor(($font-size-body * 1.875)) !default; // ~30px;
+  $font-size-y-lg: floor(($font-size-body * 2.0)) !default; // ~32px;
+  $font-size-xx-lg: floor(($font-size-body * 2.25)) !default; // ~36px;
+  $font-size-xxx-lg: floor(($font-size-body * 3.0)) !default; // ~48px;
+  $font-size-xxxx-lg: floor(($font-size-body * 3.75)) !default; // ~60px;
+  $font-size-sm: floor(($font-size-body * 0.875)) !default; // ~14px;
+  $font-size-x-sm: floor(($font-size-body * 0.75)) !default; // ~12px;
+  $font-size-xx-sm: floor(($font-size-body * 0.625)) !default; // ~10px;
+  $font-size-tiny: floor(($font-size-body * 0.6875)) !default; // ~11px;
+  $font-size-tiny-1: floor(($font-size-body * 0.71875)) !default; // ~11.5px;
+  $font-size-h1: $font-size-x-lg; // ~30px
+  $font-size-h2: $font-size-lg; // ~24px
+  $font-weight-regular: 400 !default;
+  
+  // Text
+  $text-color-base: #333333 !default;
+  $text-line-height-base: 1.3571428571 !default;
+  
+  // ------ Common Color Variables -----
+  $color-black: #000000;
+  $color-white: #FFFFFF;
+  $color-gray-base: $color-black;
+  $color-gray-darker: #222222;
+  $color-gray-dark: #333333;
+  $color-gray: #444444;
+  $color-gray-light: #777777;
+  $color-gray-lighter: #999999;
+  $color-gray-lighter-shade-light: #AAAAAA;
+  $color-gray-lighter-shade-lighter: #CCCCCC;
+  $color-gray-lighter-shade-lightest: #EEEEEE;
+  $color-gray-lighter-shade-custom-1: #ECECEC;
+  $color-gray-lighter-shade-custom-2: #A5A5A5;
+  $color-gray-lighter-shade-custom-3: #C4C8CC;
+  $color-gray-lighter-shade-custom-4: #EDEDED;
+  $color-gray-lighter-shade-custom-5: #b3b3b3;
+  $color-gray-lighter-shade-custom-6: #F5F5F5;
+  $color-gray-lighter-shade-custom-7: #DDDDDD;
+  $color-gray-lighter-shade-custom-8: #EAEAEA;
+  $color-gray-lighter-shade-custom-9: #E6E6E6;
+  
+  
+  $color-gray-shade-1: #44474B;
+  $color-gray-shade-2: #6F6F6F;
+  $color-gray-shade-3: #666666;
+  $color-gray-shade-4: #50545C;
+  $color-gray-shade-5: #5c596d;
+  $color-gray-shade-6: #4F4F4F;
+  
+  
+  $color-blue-base: #004FB6;
+  $color-blue-dark: #2E51A1;
+  $color-blue-dark-shade-1: #0B5590;
+  $color-blue-light: #006AC3;
+  $color-blue-light-shade-1: #3287CE;
+  $color-blue-light-shade-2: #217ECA;
+  $color-blue-light-shade-3: #0073CF;
+  $color-blue-light-shade-4: #0060A9;
+  $color-blue-base-shade-1: #1E62C3;
+  
+  
+  
+  
+  $color-sky-blue: #6AADE4;
+  $color-sky-blue-lighter: #C2DEEA;
+  $color-sky-blue-lighter-shade-1: #c3e2fa;
+  
+  
+  $color-yellow-base: #FFD900;
+  $color-yellow-light-shade-1: #FEDB00;
+  $color-yellow-light-shade-2: #FEEF80;
+  $color-yellow-light-shade-3: #FEDF01;
+  $color-yellow-light-shade-4: #FFF4B4;
+  $color-yellow-dark-shade-1: #EBC400;
+  
+  
+  $color-red-base: #BD2624;
+  $color-red-shade-1: #b91a03;
+  $color-red-shade-2: #B5071B;
+  
+  
+  
+  
+  
+  
+  
+  // nhlpa Core palette (Ref# https://standards.nhlpa.com)
+  $color-nhlpa-yellow: $color-yellow-base;
+  $color-nhlpa-white: $color-white;
+  $color-nhlpa-body-gray: #444444;
+  $color-nhlpa-defining-gray: #CCCCCC;
+  $color-nhlpa-light-gray: #EEEEEE;
+  
+  // nhlpa Functional palette
+  $color-nhlpa-blue: #004FB6;
+  $color-nhlpa-green: #4F9F31;
+  $color-nhlpa-guide-blue-tint: #E5EDF8;
+  $color-nhlpa-red: #BD2624;
+  $color-nhlpa-orange: #FFA000;
+  
+  // nhlpa Accent palette
+  $color-nhlpa-dark-blue: #001E60;
+  $color-nhlpa-light-blue: #1A61BD;
+  $color-nhlpa-dark-green: #0E573F;
+  $color-nhlpa-dark-purple: #421B67;
+  $color-nhlpa-light-purple: #87378E;
+  $color-nhlpa-pink: #C01B83;
+  $color-nhlpa-teal: #009AB1;
+  
+  // ---- Theme specific colors ---
+  // nhlpa
+  $nhlpa-color-blue: #2E51A1 !default;
+  $nhlpa-color-light-blue: #006AC3 !default;
+  $nhlpa-color-light-gray: #F5F5F5 !default;
+  $nhlpa-color-dark-gray: #444444;
+  $nhlpa-color-white: $color-white;
+  $nhlpa-color-light-yellow: $color-yellow-light-shade-1;
+  $nhlpa-color-yellow: $color-yellow-dark-shade-1;
+  
+  
+  
+  //** Global textual link color.
+  $link-color:            $color-nhlpa-blue !default;
+  $link-hover-color:      darken($link-color, 15%) !default;
+  $link-hover-decoration: underline !default;
+  
+  /*----------------------------------------------
+    | Component Specific Variables               |
+    ----------------------------------------------*/
+  
+  // --- Header ---
+  $header-bg: $color-nhlpa-white !default;
+  $header-breads-bg: $nhlpa-color-light-blue !default;
+  $header-breads-bg-yellow: $color-nhlpa-yellow !default;
+  $header-breads-text-color: $color-nhlpa-white !default;
+  
+  $header-link-color: $color-nhlpa-white !default;
+  $header-link-hover-color: $color-nhlpa-defining-gray !default;
+  
+  // --- Footer ---
+  $footer-bg: $color-gray-shade-4 !default;
+  $footer-text-color: $color-nhlpa-white !default;
+  $footer-font-size: 0.85em !default;
+  
+  
+  /*----------------------------------------------
+    | Theme Specific Variables                   |
+    ----------------------------------------------*/
+  // --- nhlpa ---
+  $nhlpa-font-family: $font-family-Roboto;
+  $nhlpa-header-breads-bg: $nhlpa-color-blue !default;
+  $nhlpa-footer-bg: $color-gray-shade-4 !default;
+  $rgc-gi-quoter-bg: $nhlpa-color-light-gray;
+  $nhlpa-form-label-font-size: $font-size-sm;
+  $nhlpa-form-label-color: #444444;
+  $nhlpa-form-input-font-size: $font-size-body;
+  $nhlpa-form-input-color: #444444;
+  
+  // Dropdown variables
+  $nhlpa-dropdown-add-btn-font-size: $font-size-big;
+  $nhlpa-dropdown-add-btn-font-weight: 500;
+  $nhlpa-dropdown-add-btn-text-alignment: left;
+  $nhlpa-dropdown-add-btn-text-active-color: $nhlpa-color-light-blue;
+  $nhlpa-dropdown-add-btn-text-hover-color: $nhlpa-color-white;
+  $nhlpa-dropdown-add-btn-background: $nhlpa-color-white;
+  $nhlpa-dropdown-add-btn-hover-background: $nhlpa-color-light-blue;
+  $nhlpa-dropdown-add-btn-padding: 34px;
+  $nhlpa-dropdown-add-btn-border-width: 2px;
+  $nhlpa-dropdown-add-btn-border-color: $nhlpa-color-light-blue;
+  $nhlpa-dropdown-add-menu-background: $nhlpa-color-white;
+  $nhlpa-dropdown-add-menu-item-divider-color: #ececec;
+  $nhlpa-dropdown-add-menu-item-active-color: #0073cf;
+  $nhlpa-dropdown-add-menu-item-hover-color: $nhlpa-color-dark-gray;
+  $nhlpa-dropdown-add-menu-item-hover-backdround: #c2deea;
+  
+  // $dropdown-menu-bg: #FFFFFF, $dropdown-item-divider-color: #ececec, $dropdown-button-color: #006AC3, $dropdown-item-active-color:#0073CF, $dropdown-item-hover-color: #444444, $dropdown-item-hover-bg-color: #C2DEEA
+  $nhlpa-font-family: $font-family-SourceSansPro;
+  
+  
+  // Image Directory
+  $image-root-path: '../';
