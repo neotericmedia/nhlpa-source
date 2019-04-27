@@ -12,7 +12,7 @@ import { REQUEST } from '@nguniversal/aspnetcore-engine/tokens';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { filter, map, mergeMap } from 'rxjs/operators';
-import { LinkService } from './shared/link.service';
+// import { LinkService } from './shared/link.service';
 
 @Component({
   selector: 'app-root',
@@ -34,7 +34,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private title: Title,
     private meta: Meta,
-    private linkService: LinkService,
+    // private linkService: LinkService,
     public translate: TranslateService,
     private injector: Injector
   ) {
@@ -96,8 +96,8 @@ export class AppComponent implements OnInit, OnDestroy {
       this.meta.updateTag(metaData[i]);
     }
 
-    for (let i = 0; i < linksData.length; i++) {
-      this.linkService.addTag(linksData[i]);
-    }
+    // for (let i = 0; i < linksData.length; i++) {
+    //   this.linkService.addTag(linksData[i]);
+    // }
   }
 }

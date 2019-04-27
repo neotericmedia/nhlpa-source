@@ -22,7 +22,7 @@ import { HomeComponent } from './containers/home/home.component';
 import { NgxBootstrapComponent } from './containers/ngx-bootstrap-demo/ngx-bootstrap.component';
 import { NotFoundComponent } from './containers/not-found/not-found.component';
 import { UsersComponent } from './containers/users/users.component';
-import { LinkService } from './shared/link.service';
+// import { LinkService } from './shared/link.service';
 import { UserService } from './shared/user.service';
 
 export function createTranslateLoader(http: HttpClient, baseHref) {
@@ -211,7 +211,7 @@ export function createTranslateLoader(http: HttpClient, baseHref) {
       }
     )
   ],
-  providers: [LinkService, UserService, TranslateModule],
+  providers: [UserService, TranslateModule],
   bootstrap: [AppComponent]
 })
 export class AppModuleShared {}
