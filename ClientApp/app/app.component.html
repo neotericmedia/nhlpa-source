@@ -5,8 +5,6 @@
   </div>
 </div>
 
-
-
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
@@ -24,24 +22,8 @@
       </div>
       <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
         <ul class="navbar-nav ml-auto flex-nowrap">
-          <li class="nav-item">
-            <a href="#" class="nav-link">Union</a>
-            <!-- <a href="#" class="nav-link">{{ 'HOME_FEATURE_LIST_TITLE' | translate }}</a> -->
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">News</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Programs</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Club 67</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Marketplace</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Contacts</a>
+          <li class="nav-item" *ngFor="let link of mainNav">
+            <a href="#" class="nav-link" routerLink="{{link}}">{{link}}</a>
           </li>
         </ul>
       </div>
@@ -49,32 +31,10 @@
   </nav>
   <nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container">
-      <div class="navbar-collapse collapse w-100 order-4 order-md-0 collapsenav">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-        </ul>
-      </div>
-      <div class="w-100 d-flex flex-nowrap">
-        <div class="w-100 d-md-none">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapsenav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-        <div class="d-flex w-100 mx-auto order-0">
-          <a class="navbar-brand mx-0" href="#">Logo</a>
-        </div>
-        <div class="d-flex w-100 justify-content-end order-3">
-          <form class="d-flex flex-nowrap align-items-center">
-            <input class="form-control border-right-0 mr-n1" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-      </div>
+      <form class="d-flex flex-nowrap align-items-center">
+        <input class="form-control border-right-0 mr-n1" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
+      </form>
     </div>
   </nav>
 </header>
@@ -96,111 +56,3 @@
     </p>
   </div>
 </footer>
-
-
-
-<!-- <h1>{{ title }}</h1>
-
-<blockquote>
-  <strong>Enjoy the latest features from .NET Core & Angular 7.x!</strong>
-  <br> For more info check the repo here:
-  <a href="https://github.com/MarkPieszak/aspnetcore-angular-universal" target="_blank">AspNetCore-Angular-Universal
-    repo</a>
-  <br>
-  <br>
-</blockquote>
-
-
-
-
-<div class="row">
-  <div class="col-lg-6">
-
-    <mat-card>
-
-      <h2>{{ 'HOME_FEATURE_LIST_TITLE' | translate }} </h2>
-      <ul>
-        <li>ASP.NET Core 2.1 :: ( Visual Studio 2017 )</li>
-        <li>
-          Angular 7.* front-end UI framework
-          <ul>
-            <li>Angular **platform-server** (aka: Universal) - server-side rendering for SEO, deep-linking, and
-              incredible
-              performance.</li>
-            <li>HMR State Management - Don't lose your applications state during HMR!</li>
-            <li>AoT (Ahead-of-time) production compilation for even faster Prod builds.</li>
-          </ul>
-        </li>
-        <li>
-          The latest TypeScript 2.* features
-        </li>
-        <li>
-          Webpack
-          <ul>
-            <li>Hot Module Reloading/Replacement for an amazing development experience.</li>
-            <li>Tree-shaking</li>
-          </ul>
-        </li>
-
-        <li>Bootstrap (ngx-bootstrap) : Bootstrap capable of being rendered even on the server.</li>
-        <li>Unit testing via karma & jasmine.</li>
-      </ul>
-
-    </mat-card>
-
-  </div>
-
-  <div class="col-lg-6">
-
-    <mat-card>
-
-      <h2>{{ 'HOME_ISSUES_TITLE' | translate }}</h2>
-
-      <ul>
-        <li>
-          <strong>Issues with this Starter?</strong>
-          <br>Please post an issue here:
-          <a href="https://github.com/MarkPieszak/aspnetcore-angular2-universal"
-            target="_blank">AspNetCore-Angular2-Universal repo</a>
-          <br>
-          <br>
-        </li>
-        <li><strong>Issues with <u>Universal</u> itself?</strong> <br>Please post an issue here: <a href="https://github.com/angular/universal">Angular Universal repo</a></li>
-      </ul>
-
-      <h2><a href="https://trilon.io" target="_blank">Trilon Consulting - Trilon.io</a></h2>
-
-      <strong>Consulting | Development | Training | Workshops</strong>
-      <br><br>
-      Get your Team or Application up to speed by working with some of the leading industry experts in JavaScript, Node
-      /
-      NestJS, & ASP.NET!<br>
-      <br>
-      <strong>Follow us on Twitter!</strong><br><br>
-      <a href="http://www.twitter.com/trilon_io" target="_blank">@trilon_io</a> |
-      <a href="http://www.twitter.com/MarkPieszak" target="_blank">@MarkPieszak</a>
-      <br>
-      <br>
-
-      </mat-card>
-
-  </div>
-
-</div>
-
-
-<div class="row">
-  <div class="col-lg-12">
-
-    <h2> {{ 'SWITCH_LANGUAGE' | translate }}</h2>
-
-    <button class="btn btn-outline-secondary mr-2" (click)="setLanguage('en')">
-      <span class="flag-icon flag-icon-us"></span> {{ 'ENGLISH' | translate }}
-    </button>
-
-    <button class="btn btn-outline-secondary" (click)="setLanguage('no')">
-      <span class="flag-icon flag-icon-no"></span> {{ 'NORWEGIAN' | translate }}
-    </button>
-
-  </div>
-</div> -->

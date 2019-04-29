@@ -1,18 +1,10 @@
-import {
-  Component,
-  Injector,
-  OnDestroy,
-  OnInit,
-  ViewEncapsulation
-} from '@angular/core';
+import { Component, Injector, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { REQUEST } from '@nguniversal/aspnetcore-engine/tokens';
-// i18n support
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { filter, map, mergeMap } from 'rxjs/operators';
-// import { LinkService } from './shared/link.service';
 
 @Component({
   selector: 'app-root',
@@ -28,35 +20,41 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private routerSub$: Subscription;
   private request;
+  mainNav;
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private title: Title,
     private meta: Meta,
-    // private linkService: LinkService,
     public translate: TranslateService,
     private injector: Injector
   ) {
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang('en');
-
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     translate.use('en');
-
     this.request = this.injector.get(REQUEST);
-
     console.log(`What's our REQUEST Object look like?`);
-    console.log(
-      `The Request object only really exists on the Server, but on the Browser we can at least see Cookies`
-    );
+    console.log(`The Request object only really exists on the Server, but on the Browser we can at least see Cookies`);
     console.log(this.request);
+    // translate.get('HOME.TITLE').subscribe((text: string) => { console.log(text)});
   }
+
 
   ngOnInit() {
     // Change "Title" on every navigationEnd event
     // Titles come from the data.title property on all Routes (see app.routes.ts)
     this._changeTitleOnNavigation();
+
+    this.translate.get('header.nav').subscribe(
+      nav => {
+        this.mainNav = nav;
+        // if (this.text.length < 9) {
+        //   console.log('less than 9');
+        // }
+      }
+    );
   }
 
   ngOnDestroy() {

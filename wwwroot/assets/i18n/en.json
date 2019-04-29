@@ -1,5 +1,8 @@
 {
-  "HOME": "Home",
+  "header": {
+    "nav": ["union", "news", "programs", "club 67", "marketplace", "contacts"],
+    "SELECT": "Change language"
+  },
   "HOME_FEATURE_LIST_TITLE": "What does this Starter offer?",
   "HOME_ISSUES_TITLE": "Having issues?",
   "COUNTER": "Counter",

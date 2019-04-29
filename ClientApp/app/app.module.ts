@@ -78,6 +78,7 @@ export function createTranslateLoader(http: HttpClient, baseHref) {
           redirectTo: 'home',
           pathMatch: 'full'
         },
+        // { path: 'products', component: ProductListComponent },
         {
           path: 'home',
           component: HomeComponent,
