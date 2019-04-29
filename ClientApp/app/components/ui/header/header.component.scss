@@ -1,0 +1,14 @@
+@import "../../../smacss/utilities/variables/variables";
+
+nav {
+  background: $color-black;
+  height: 70px;
+  a {
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+    font-family: $font-family-Roboto-thin;
+    display: block;
+    padding: 0.5rem 0.75rem;
+  }
+}

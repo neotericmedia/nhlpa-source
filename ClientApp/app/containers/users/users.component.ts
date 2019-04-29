@@ -1,10 +1,4 @@
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger
-} from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { IUser } from '../../models/User';
 import { UserService } from '../../shared/user.service';
@@ -14,8 +8,6 @@ import { UserService } from '../../shared/user.service';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
   animations: [
-    // Animation example
-    // Triggered in the ngFor with [@flyInOut]
     trigger('flyInOut', [
       state('in', style({ transform: 'translateY(0)' })),
       transition('void => *', [
@@ -36,11 +28,8 @@ export class UsersComponent implements OnInit {
   errorMessage: string;
   filteredProducts: IUser[];
 
-  // Use "constructor"s only for dependency injection
   constructor(private userService: UserService) { }
-
-  // Here you want to handle anything with @Input()'s @Output()'s
-  // Data retrieval / etc - this is when the Component is "ready" and wired up
+  
   // ngOnInit() {
   //   this.userService.getUsers().subscribe(result => {
   //     console.log('HttpClient [GET] /api/users/allresult', result);

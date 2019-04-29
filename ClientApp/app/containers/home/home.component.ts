@@ -1,23 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Injectable, Injector } from '@angular/core';
+import { Injector } from '@angular/core';
 import { ORIGIN_URL } from '@nguniversal/aspnetcore-engine/tokens';
+import { NewsService } from '../../shared/news.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   title = 'Angular 7.x Universal & ASP.NET Core 2.1 advanced starter-kit';
-  image: string;
+  featureImage: string;
   baseUrl: string;
+  news: any;
+  errorMessage: string;
 
-  constructor(public translate: TranslateService, private injector: Injector) {
+  constructor(public translate: TranslateService, private injector: Injector, private newsService: NewsService) {
     this.baseUrl = this.injector.get(ORIGIN_URL);
   }
 
   ngOnInit() {
-    this.image = `${this.baseUrl}/assets/NHL-Maple-Leafs-celebrate-goal-against-Bruins-1040x572.jpg`;
+    this.featureImage = `${this.baseUrl}/assets/nhl-suspends-tyler-bertuzzi-two-games.jpg`;
+    this.newsService.getNews().subscribe(
+      news => {
+        this.news = news;
+      },
+      error => this.errorMessage = <any>error
+    );
+    
   }
 
   public setLanguage(lang) {

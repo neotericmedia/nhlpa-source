@@ -5,14 +5,17 @@ import { Subscription } from 'rxjs';
 import { REQUEST } from '@nguniversal/aspnetcore-engine/tokens';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { Meta, Title } from '@angular/platform-browser';
+import { ORIGIN_URL } from '@nguniversal/aspnetcore-engine/tokens';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public mainNav: string;
+  mainNav: string;
+  logo: string;
+  baseUrl: string;
   private request;
   private routerSub$: Subscription;
   // This will go at the END of your title for example "Home - Angular Universal..." <-- after the dash (-)
@@ -27,13 +30,15 @@ export class HeaderComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private title: Title,
     private meta: Meta) {
-    translate.setDefaultLang('en');
-    translate.use('en');
-    this.request = this.injector.get(REQUEST);
-    console.log(this.request);
+      this.baseUrl = this.injector.get(ORIGIN_URL);
+      translate.setDefaultLang('en');
+      translate.use('en');
+      this.request = this.injector.get(REQUEST);
+      console.log(this.request);
   }
 
   ngOnInit() {
+    this.logo = `${this.baseUrl}/assets/source-logo.png`;
     this._changeTitleOnNavigation();
     this.translate.get('header.nav').subscribe(
       nav => {
@@ -65,10 +70,7 @@ export class HeaderComponent implements OnInit {
 
   private _setMetaAndLinks(event) {
     // Set Title if available, otherwise leave the default Title
-    const title = event['title']
-      ? `${event['title']} - ${this.endPageTitle}`
-      : `${this.defaultPageTitle} - ${this.endPageTitle}`;
-
+    const title = event['title'] ? `${event['title']} - ${this.endPageTitle}` : `${this.defaultPageTitle} - ${this.endPageTitle}`;
     this.title.setTitle(title);
     const metaData = event['meta'] || [];
     const linksData = event['links'] || [];
