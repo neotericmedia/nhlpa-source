@@ -15,7 +15,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AccordionModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './components/navmenu/navmenu.component';
+import { NavMenuComponent } from './components/ui/navmenu/navmenu.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { CounterComponent } from './containers/counter/counter.component';
 import { HomeComponent } from './containers/home/home.component';
@@ -24,6 +24,9 @@ import { NotFoundComponent } from './containers/not-found/not-found.component';
 import { UsersComponent } from './containers/users/users.component';
 // import { LinkService } from './shared/link.service';
 import { UserService } from './shared/user.service';
+import { ScoreboardComponent } from './components/ui/scoreboard/scoreboard.component';
+import { HeaderComponent } from './components/ui/header/header.component';
+import { FooterComponent } from './components/ui/footer/footer.component';
 
 export function createTranslateLoader(http: HttpClient, baseHref) {
   // Temporary Azure hack
@@ -43,7 +46,10 @@ export function createTranslateLoader(http: HttpClient, baseHref) {
     UserDetailComponent,
     HomeComponent,
     NotFoundComponent,
-    NgxBootstrapComponent
+    NgxBootstrapComponent,
+    ScoreboardComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
