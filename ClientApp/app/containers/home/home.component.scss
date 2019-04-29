@@ -1,7 +1,7 @@
 @import "../../smacss/utilities/variables/variables";
 @import "../../smacss/utilities/mixins/mixins";
 
-.m-card {
+.m-card, .m-card-white {
   border: none;
   border-radius: 0;
   &__body {
@@ -11,6 +11,15 @@
   &__img-top {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+  }
+}
+
+.m-card-white {
+  background: $color-gray-lighter-shade-custom-4;
+  @include margin(null, null, 5px, null);
+  :hover {
+    background: $color-black;
+    color: $color-white;
   }
 }
 

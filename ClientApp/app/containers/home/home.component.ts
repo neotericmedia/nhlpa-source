@@ -22,13 +22,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.featureImage = `${this.baseUrl}/assets/nhl-suspends-tyler-bertuzzi-two-games.jpg`;
-    this.newsService.getNews().subscribe(
-      news => {
+
+
+    this.newsService.getNews()
+      .subscribe(news => {
         this.news = news;
       },
-      error => this.errorMessage = <any>error
-    );
-    
+        error => this.errorMessage = <any>error
+      );
+
   }
 
   public setLanguage(lang) {
