@@ -1,32 +1,52 @@
-// @import '../../smacss/utilities/variables/variables';
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
 
-// html, body {
-//     margin:0;
-//     padding:0;
-//     height:100%;
+body {
+    font-family: $font-family-Roboto;
+    font-weight: $font-weight-regular;
+    -webkit-font-smoothing: auto;
+    text-rendering: optimizeLegibility;
+    color: $text-color-base;
+    font-size: $font-size-body;
+    line-height: $text-line-height-base;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  color: $link-color;
+}
+
+// @include media-breakpoint-down(md) {
+//   .panel {
+//     .body {
+//       flex-direction: column;
+//       padding: 0px;
+//     }
+//     .title {
+//       font-size: 1.5rem;
+//     }
+//   }
 // }
 
-// body {
-//     font-family: $font-family-Roboto;
-//     font-weight: $font-weight-regular;
-//     -webkit-font-smoothing: auto;
-//     text-rendering: optimizeLegibility;
-//     color: $text-color-base;
-//     font-size: $font-size-body;
-//     line-height: $text-line-height-base;
+// @include media-breakpoint-up(md) {
+//   .panel {
+//     .body {
+//       flex-direction: row;
+//       padding: 1.5rem;
+//     }
+//   }
 // }
 
-// p {
-//   margin: 0px;
-//   padding: 0px;
-// }
-// a {
-//   color: $link-color;
-// }
 
 // // ---------------------------- Media Queries ------------------------------- //
 
-// // @TODO : Need to Refactor col-sm-12, col-md-10, col-lg-10
 // @media (max-width: 768px) {
 //   .col-sm-12 {
 //     width: 100%;
@@ -50,5 +70,3 @@
 //     width: 100%;
 //   }
 // }
-
-

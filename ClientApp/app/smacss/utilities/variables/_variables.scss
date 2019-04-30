@@ -1,22 +1,4 @@
-@import '../../styles';
-$header-height: 50px;
-$menu-max-width: 25%;
-$navbar-default-bg: #312312;
-$light-orange: #ff8c00;
-$navbar-default-color: $light-orange;
-
-
-
-
-
-
-
-
-
-
-
-
-
+@import "~bootstrap/scss/bootstrap";
 
 /*----------------------------------------------
   | Common Variables                           |
@@ -24,7 +6,10 @@ $navbar-default-color: $light-orange;
   $std-nhlpa-font-body: 16px;
 
   // Font
-  $font-family-Frutiger: FrutigerLTW01-45Light !default;
+  $font-family-Oswald300: oswaldlight !default;
+  $font-family-Oswald400: oswaldreg !default;
+  $font-family-Oswald500: oswaldmed !default;
+
   $font-family-Roboto: robotoregular !default;
   $font-family-Roboto-light: robotolight !default;
   $font-family-Roboto-thin: robotothin !default;
@@ -37,7 +22,6 @@ $navbar-default-color: $light-orange;
   $font-family-SourceSansPro-black: source_sans_problack !default;
   
   $font-family-Segment7: segment7standard !default;
-  
   
   $font-size-body: $std-nhlpa-font-body !default;
   $font-size-md: floor(($font-size-body * 1.125)) !default; // ~18px;
@@ -91,7 +75,6 @@ $navbar-default-color: $light-orange;
   $color-gray-shade-5: #5c596d;
   $color-gray-shade-6: #4F4F4F;
   
-  
   $color-blue-base: #004FB6;
   $color-blue-dark: #2E51A1;
   $color-blue-dark-shade-1: #0B5590;
@@ -102,13 +85,9 @@ $navbar-default-color: $light-orange;
   $color-blue-light-shade-4: #0060A9;
   $color-blue-base-shade-1: #1E62C3;
   
-  
-  
-  
   $color-sky-blue: #6AADE4;
   $color-sky-blue-lighter: #C2DEEA;
   $color-sky-blue-lighter-shade-1: #c3e2fa;
-  
   
   $color-yellow-base: #FFD900;
   $color-yellow-light-shade-1: #FEDB00;
@@ -117,16 +96,9 @@ $navbar-default-color: $light-orange;
   $color-yellow-light-shade-4: #FFF4B4;
   $color-yellow-dark-shade-1: #EBC400;
   
-  
   $color-red-base: #BD2624;
   $color-red-shade-1: #b91a03;
   $color-red-shade-2: #B5071B;
-  
-  
-  
-  
-  
-  
   
   // nhlpa Core palette (Ref# https://standards.nhlpa.com)
   $color-nhlpa-yellow: $color-yellow-base;
@@ -161,8 +133,6 @@ $navbar-default-color: $light-orange;
   $nhlpa-color-light-yellow: $color-yellow-light-shade-1;
   $nhlpa-color-yellow: $color-yellow-dark-shade-1;
   
-  
-  
   //** Global textual link color.
   $link-color:            $color-nhlpa-blue !default;
   $link-hover-color:      darken($link-color, 15%) !default;
@@ -171,7 +141,6 @@ $navbar-default-color: $light-orange;
   /*----------------------------------------------
     | Component Specific Variables               |
     ----------------------------------------------*/
-  
   // --- Header ---
   $header-bg: $color-nhlpa-white !default;
   $header-breads-bg: $nhlpa-color-light-blue !default;
@@ -185,7 +154,6 @@ $navbar-default-color: $light-orange;
   $footer-bg: $color-gray-shade-4 !default;
   $footer-text-color: $color-nhlpa-white !default;
   $footer-font-size: 0.85em !default;
-  
   
   /*----------------------------------------------
     | Theme Specific Variables                   |
@@ -219,7 +187,6 @@ $navbar-default-color: $light-orange;
   
   // $dropdown-menu-bg: #FFFFFF, $dropdown-item-divider-color: #ececec, $dropdown-button-color: #006AC3, $dropdown-item-active-color:#0073CF, $dropdown-item-hover-color: #444444, $dropdown-item-hover-bg-color: #C2DEEA
   $nhlpa-font-family: $font-family-SourceSansPro;
-  
   
   // Image Directory
   $image-root-path: '../';

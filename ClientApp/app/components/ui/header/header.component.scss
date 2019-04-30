@@ -6,9 +6,12 @@ nav {
   a {
     color: $color-white;
     text-transform: uppercase;
-    font-size: $font-size-sm;
-    font-family: $font-family-Roboto-thin;
+    font-size: $font-size-md;
+    font-family: $font-family-Oswald400;
     display: block;
     padding: 0.5rem 0.75rem;
+    :hover {
+      color: $color-white;
+    }
   }
 }

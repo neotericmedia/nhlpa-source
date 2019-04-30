@@ -79,11 +79,11 @@ h1 {
   margin-right: 10px;
 }
 
-@include media-breakpoint-down(sm) {
-  .body {
-    flex-direction: column-reverse !important;
-  }
-}
+// @include media-breakpoint-down(sm) {
+//   .body {
+//     flex-direction: column-reverse !important;
+//   }
+// }
 
 @include media-breakpoint-up(md) {
   .users-wrapper {

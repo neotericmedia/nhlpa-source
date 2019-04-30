@@ -12,7 +12,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
     </main>
     <app-footer></app-footer>
   `,
-  styleUrls: ['./smacss/app.component.scss'],
+  styleUrls: ['./smacss/_main.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
