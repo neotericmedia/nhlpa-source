@@ -38,6 +38,13 @@
 // Theme Styles
 // ==========================================================================
 
-main {
-  @include padding(50px, null, null, null);
+body {
+  font-family: $font-family-Roboto;
+  font-weight: $font-weight-regular;
+  -webkit-font-smoothing: auto;
+  text-rendering: optimizeLegibility;
+  color: $text-color-base;
+  font-size: $font-size-body;
+  line-height: $text-line-height-base;
+  background-color: $color-black;
 }
