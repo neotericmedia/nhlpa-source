@@ -4,14 +4,15 @@ nav {
   background: $color-black;
   height: 70px;
   a {
-    color: $color-white;
+    color: $color-gray;
     text-transform: uppercase;
     font-size: $font-size-md;
     font-family: $font-family-Oswald400;
     display: block;
     padding: 0.5rem 0.75rem;
-    :hover {
+    &:hover {
       color: $color-white;
+      text-decoration: none;
     }
   }
 }

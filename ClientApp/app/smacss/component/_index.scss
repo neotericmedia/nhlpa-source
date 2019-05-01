@@ -1,0 +1,29 @@
+@import "../../smacss/utilities/variables/variables";
+@import "../../smacss/utilities/mixins/mixins";
+
+.m-card, .m-card-white {
+  border: none;
+  border-radius: 0;
+  &__body {
+    color: $color-white;
+    background: $color-black;
+  }
+  &__img-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.m-card-white {
+  background: $color-gray-lighter-shade-custom-4;
+  @include margin(null, null, 5px, null);
+  :hover {
+    background: $color-black;
+    color: $color-white;
+  }
+}
+
+.container {
+  @include padding(50px, null, null, null);
+  // @include margin(1px, 2px, 3px, 4px);
+}

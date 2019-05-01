@@ -27,6 +27,7 @@ import { NewsService } from './shared/news.service';
 import { ScoreboardComponent } from './components/ui/scoreboard/scoreboard.component';
 import { HeaderComponent } from './components/ui/header/header.component';
 import { FooterComponent } from './components/ui/footer/footer.component';
+import { NewsSubComponent } from './components/news-sub/news-sub.component';
 
 export function createTranslateLoader(http: HttpClient, baseHref) {
   // Temporary Azure hack
@@ -48,7 +49,8 @@ export function createTranslateLoader(http: HttpClient, baseHref) {
     NgxBootstrapComponent,
     ScoreboardComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NewsSubComponent
   ],
   imports: [
     CommonModule,

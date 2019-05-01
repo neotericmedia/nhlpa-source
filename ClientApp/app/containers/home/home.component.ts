@@ -11,7 +11,6 @@ import { NewsService } from '../../shared/news.service';
 })
 export class HomeComponent implements OnInit {
   title = 'Angular 7.x Universal & ASP.NET Core 2.1 advanced starter-kit';
-  featureImage: string;
   baseUrl: string;
   news: any;
   errorMessage: string;
@@ -21,16 +20,12 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.featureImage = `${this.baseUrl}/assets/nhl-suspends-tyler-bertuzzi-two-games.jpg`;
-
-
     this.newsService.getNews()
       .subscribe(news => {
         this.news = news;
       },
         error => this.errorMessage = <any>error
       );
-
   }
 
   public setLanguage(lang) {
