@@ -1,17 +1,22 @@
-html, body {
-    margin:0;
-    padding:0;
-    height:100%;
+@import "../../smacss/utilities/variables/variables";
+@import "../../smacss/utilities/mixins/mixins";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body {
-    font-family: $font-family-Roboto;
-    font-weight: $font-weight-regular;
-    -webkit-font-smoothing: auto;
-    text-rendering: optimizeLegibility;
-    color: $text-color-base;
-    font-size: $font-size-body;
-    line-height: $text-line-height-base;
+  font-family: $font-family-Roboto;
+  font-weight: $font-weight-regular;
+  -webkit-font-smoothing: auto;
+  text-rendering: optimizeLegibility;
+  color: $text-color-base;
+  font-size: $font-size-body;
+  line-height: $text-line-height-base;
+  background-color: $color-black;
 }
 
 p {
@@ -23,6 +28,9 @@ a {
   color: $link-color;
 }
 
+main {
+  @include padding(50px, null, null, null);
+}
 // @include media-breakpoint-down(md) {
 //   .panel {
 //     .body {
@@ -43,7 +51,6 @@ a {
 //     }
 //   }
 // }
-
 
 // // ---------------------------- Media Queries ------------------------------- //
 

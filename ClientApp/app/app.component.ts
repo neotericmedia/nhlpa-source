@@ -6,9 +6,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
     <app-scoreboard></app-scoreboard>
     <app-header></app-header>
     <main role="main">
-      <div class="container">
-        <router-outlet></router-outlet>
-      </div>
+      <router-outlet></router-outlet>
     </main>
     <app-footer></app-footer>
   `,

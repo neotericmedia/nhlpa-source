@@ -28,6 +28,8 @@ import { ScoreboardComponent } from './components/ui/scoreboard/scoreboard.compo
 import { HeaderComponent } from './components/ui/header/header.component';
 import { FooterComponent } from './components/ui/footer/footer.component';
 import { NewsSubComponent } from './components/news-sub/news-sub.component';
+import { NewsFeatureComponent } from './components/news-feature/news-feature.component';
+import { PlayerTransactionsComponent } from './components/player-transactions/player-transactions.component';
 
 export function createTranslateLoader(http: HttpClient, baseHref) {
   // Temporary Azure hack
@@ -50,7 +52,9 @@ export function createTranslateLoader(http: HttpClient, baseHref) {
     ScoreboardComponent,
     HeaderComponent,
     FooterComponent,
-    NewsSubComponent
+    NewsSubComponent,
+    NewsFeatureComponent,
+    PlayerTransactionsComponent
   ],
   imports: [
     CommonModule,

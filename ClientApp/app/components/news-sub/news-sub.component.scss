@@ -1,0 +1,18 @@
+@import "../../smacss/utilities/variables/variables";
+@import "../../smacss/utilities/mixins/mixins";
+
+.m-card {
+  color: $color-white;
+  &__content {
+    position: absolute;
+    bottom: 10px;
+    z-index: 5;
+    @include padding(0px, 25px, 0px, 15px);
+    &-cardText {
+      font-size: $font-size-md;
+      font-family: $font-family-Oswald400;
+    }
+  }
+}
+
+
