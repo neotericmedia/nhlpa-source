@@ -1,7 +1,7 @@
 <section class="container">
   <div class="row">
 
-    <div class="col-sm-12 col-md-7 col-lg-7">
+    <div class="col-sm-12 col-md-12 col-lg-7">
       <div class="m-card card">
         <img class="m-card__img-top card-img-top" src="{{ news?.feature?.url }}" alt="{{ news?.feature?.title }}">
         <div class="m-card__body card-body">
@@ -15,21 +15,8 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-12 col-md-5 col-lg-5">
-      <div class="m-card-white card" *ngFor="let item of news?.subfeature">
-        <div class="card-horizontal">
-          <div class="img-square-wrapper">
-            <img class="" src="http://via.placeholder.com/150x120" alt="Card image cap">
-          </div>
-          <div class="card-body">
-            <h5 class="m-card-white-cardText">{{ item.title }}</h5>
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary">{{ item.category }}</button>
-            </div>
-            <small class="text-muted"> {{ item.date }}</small>
-          </div>
-        </div>
-      </div>
+    <div class="col-sm-12 col-md-12 col-lg-5">
+      <app-news-feed *ngFor="let item of news?.subfeature" [item]="item"></app-news-feed>
     </div>
 
   </div>
