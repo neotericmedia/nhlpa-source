@@ -1,10 +1,12 @@
 <section class="container">
   <div class="row">
     <div class="col-lg-9">
-      <app-news-feed class="test" *ngFor="let item of news?.subfeature" [item]="item"></app-news-feed>
+      <h3>Recent Updates</h3>
+      <app-news-feed class="newsFeedLong" *ngFor="let item of news?.subfeature" [item]="item"></app-news-feed>
     </div>
     <div class="col-lg-3">
-      <app-news-feed *ngFor="let item of news?.main" [item]="item"></app-news-feed>
+      <h3>Daily Headlines</h3>
+      <app-news-feed class="newsFeedShort" *ngFor="let item of news?.main" [item]="item"></app-news-feed>
     </div>
   </div>
 </section>
