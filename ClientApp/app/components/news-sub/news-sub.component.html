@@ -1,9 +1,9 @@
 <section class="o-section__sectionPaddB container">
   <div class="row">
 
-    <div class="col-md-4" *ngFor="let item of news?.main">
+    <div class="m-col4 col-md-4" *ngFor="let item of news?.main">
       <div class="m-card">
-        <img class="m-card__img-top card-img-top" src="{{ item.url }}" alt="Card image cap">
+        <img src="{{ item.url }}" alt="{{ item.title }}">
         <div class="m-card__content">
           <p class="m-card__content-cardText">{{ item.title }}</p>
           <div class="d-flex align-items-center">
