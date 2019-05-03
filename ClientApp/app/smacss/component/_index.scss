@@ -1,10 +1,6 @@
 @import "../../smacss/utilities/variables/variables";
 @import "../../smacss/utilities/mixins/mixins";
 
-section {
-  @include padding(null, null, 30px, null);
-}
-
 .m-card,
 .m-card-white {
   border: none;

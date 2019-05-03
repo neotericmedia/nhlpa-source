@@ -15,10 +15,17 @@ main {
   @include padding(50px, null, null, null);
 }
 
+.o-section {
+  &__sectionPadd {
+    @include padding(null, null, 60px, null);
+  }
+}
+
 .card-horizontal {
   display: flex;
   flex: 1 1 auto;
 }
+
 // @include media-breakpoint-down(md) {
 //   .panel {
 //     .body {

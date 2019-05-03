@@ -40,7 +40,7 @@
       "category": "News",
       "details": "The NHL announced on Thursday that Commissioner Gary Bettman has upheld the 20-game suspension issued to Tom Wilson for  [...]",
       "status": " ",
-      "url": "http://localhost:5000/assets/nhl-suspends-tyler-bertuzzi-two-games.jpg"
+      "url": "http://via.placeholder.com/150x120"
     },
     {
       "title": "United Heroes League, NHLPA Announce All-Star Hero Campaign",
@@ -48,7 +48,7 @@
       "category": "News",
       "details": "asdfasdf",
       "status": " ",
-      "url": "http://localhost:5000/assets/nhl-suspends-tyler-bertuzzi-two-games.jpg"
+      "url": "http://via.placeholder.com/150x120"
     },
     {
       "title": "Blackhawks fire head coach Quenneville",
@@ -56,7 +56,33 @@
       "category": "News",
       "details": "asdfasdf",
       "status": " ",
-      "url": "http://localhost:5000/assets/nhl-suspends-tyler-bertuzzi-two-games.jpg"
+      "url": "http://via.placeholder.com/150x120"
+    }
+  ],
+  "recentupdates": [
+    {
+      "title": "Flyers fire GM Ron Hextall ",
+      "date": "Oct 5, 2018",
+      "category": "News",
+      "details": "The NHL announced on Thursday that Commissioner Gary Bettman has upheld the 20-game suspension issued to Tom Wilson for  [...]",
+      "status": " ",
+      "url": "http://via.placeholder.com/270x180"
+    },
+    {
+      "title": "United Heroes League, NHLPA Announce All-Star Hero Campaign",
+      "date": "Oct 5, 2018",
+      "category": "News",
+      "details": "asdfasdf",
+      "status": " ",
+      "url": "http://via.placeholder.com/270x180"
+    },
+    {
+      "title": "Blackhawks fire head coach Quenneville",
+      "date": "Oct 5, 2018",
+      "category": "News",
+      "details": "asdfasdf",
+      "status": " ",
+      "url": "http://via.placeholder.com/270x180"
     }
   ]
 }
