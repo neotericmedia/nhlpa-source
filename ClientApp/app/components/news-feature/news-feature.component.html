@@ -1,8 +1,8 @@
-<section class="container">
+<section class="o-section__sectionPaddA container">
   <div class="row">
 
     <div class="col-sm-12 col-md-12 col-lg-7">
-      <div class="m-card card">
+      <article class="m-card card">
         <img class="m-card__img-top card-img-top" src="{{ news?.feature?.url }}" alt="{{ news?.feature?.title }}">
         <div class="m-card__body card-body">
           <h3 class="card-text">{{ news?.feature?.title }}</h3>
@@ -13,7 +13,7 @@
             <small class="text-muted">{{ news?.feature?.date }}</small>
           </div>
         </div>
-      </div>
+      </article>
     </div>
     <div class="col-sm-12 col-md-12 col-lg-5">
       <app-news-feed *ngFor="let item of news?.subfeature" [item]="item"></app-news-feed>

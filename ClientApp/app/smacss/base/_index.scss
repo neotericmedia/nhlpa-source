@@ -16,7 +16,10 @@ main {
 }
 
 .o-section {
-  &__sectionPadd {
+  &__sectionPaddA {
+    @include padding(null, null, 13px, null);
+  }
+  &__sectionPaddB {
     @include padding(null, null, 60px, null);
   }
 }
