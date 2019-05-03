@@ -1,0 +1,16 @@
+@import "../../smacss/utilities/variables/variables";
+@import "../../smacss/utilities/mixins/mixins";
+
+main {
+  background-color: $color-white;
+  @include padding(50px, null, null, null);
+}
+
+.o-section {
+  &__sectionPaddA {
+    @include padding(null, null, 13px, null);
+  }
+  &__sectionPaddB {
+    @include padding(null, null, 60px, null);
+  }
+}

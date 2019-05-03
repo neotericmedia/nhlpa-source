@@ -1,6 +1,18 @@
 @import "../../smacss/utilities/variables/variables";
 @import "../../smacss/utilities/mixins/mixins";
 
+h3 {
+  &.a-h3 {
+    font-size: 1.15rem !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    border-bottom: 2px solid $color-nhlpa-blue;
+    display: inline-block;
+    @include padding(null, null, 8px !important, null);
+    @include margin(null, null, 20px !important, null);
+  }
+}
+
 p {
   margin: 0px;
   padding: 0px;
@@ -10,69 +22,19 @@ a {
   color: $link-color;
 }
 
-main {
-  background-color: $color-white;
-  @include padding(50px, null, null, null);
-}
-
-.o-section {
-  &__sectionPaddA {
-    @include padding(null, null, 13px, null);
-  }
-  &__sectionPaddB {
-    @include padding(null, null, 60px, null);
-  }
-}
-
 .card-horizontal {
   display: flex;
   flex: 1 1 auto;
 }
 
+.btn-sm, .btn-group-sm > .btn {
+  padding: 0rem 0.25rem !important;
+  font-size: $font-size-tiny-1 !important;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
 
-// @include media-breakpoint-down(md) {
-//   .panel {
-//     .body {
-//       flex-direction: column;
-//       padding: 0px;
-//     }
-//     .title {
-//       font-size: 1.5rem;
-//     }
-//   }
-// }
-
-// @include media-breakpoint-up(md) {
-//   .panel {
-//     .body {
-//       flex-direction: row;
-//       padding: 1.5rem;
-//     }
-//   }
-// }
-
-// // ---------------------------- Media Queries ------------------------------- //
-
-// @media (max-width: 768px) {
-//   .col-sm-12 {
-//     width: 100%;
-//   }
-//   .hide-in-mobile {
-//     display: none;
-//   }
-// }
-
-// @media screen and (min-width: 992px) {
-//   body {
-//     line-height: normal;
-//   }
-//   .col-md-10 {
-//     width: 100%;
-//   }
-// }
-
-// @media (min-width: 1200px) {
-//   .col-lg-10 {
-//     width: 100%;
-//   }
-// }
+.btn-outline-secondary {
+  color: #6c757d;
+  border-color: $color-nhlpa-blue !important;
+}

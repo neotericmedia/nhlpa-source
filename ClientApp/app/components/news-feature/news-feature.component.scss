@@ -1,2 +1,8 @@
 @import "../../smacss/utilities/variables/variables";
 @import "../../smacss/utilities/mixins/mixins";
+
+p {
+  font-size: $font-size-sm;
+  display: block;
+  @include margin(20px, null, null, null)
+}

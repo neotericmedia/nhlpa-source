@@ -5,9 +5,9 @@
   color: $color-white;
   &__content {
     position: absolute;
-    bottom: 10px;
+    bottom: 23px;
     z-index: 5;
-    @include padding(0px, 25px, 0px, 15px);
+    @include padding(0px, 25px, 0px, 25px);
     &-cardText {
       font-size: $font-size-md;
       font-family: $font-family-Oswald400;

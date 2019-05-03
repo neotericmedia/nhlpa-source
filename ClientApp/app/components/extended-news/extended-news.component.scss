@@ -1,28 +1,42 @@
 @import "../../smacss/utilities/variables/variables";
 @import "../../smacss/utilities/mixins/mixins";
 
-.newsFeedLong ::ng-deep .m-card-white {
-  background: $color-white;
-  border-bottom: 1px #efefef solid;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  &-cardText {
-    font-size: $font-size-lg;
-    font-weight: bold;
-    font-family: $font-family-Roboto;
+// todo - combine these classes. use a include for similar properties
+.newsFeedLong {
+  &:last-child() ::ng-deep .m-card-white {
+    border-bottom: none;
+  }
+  &::ng-deep {
+    &.m-card-white {
+      background: $color-white;
+      border-bottom: 1px #efefef solid;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      &-cardText {
+        font-size: $font-size-lg;
+        font-weight: bold;
+        font-family: $font-family-Roboto;
+      }
+    }
   }
 }
 
-.newsFeedShort ::ng-deep .m-card-white {
-  background: $color-white;
-  border-bottom: 1px #efefef solid;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  &-cardText {
-    font-size: $font-size-lg;
+.newsFeedShort {
+  &:last-child() ::ng-deep .m-card-white {
+    border-bottom: none;
   }
-}
-
-.newsFeedShort ::ng-deep .m-card-white .img-square-wrapper {
-  display: none;
+  &::ng-deep {
+    &.m-card-white {
+      background: $color-white;
+      border-bottom: 1px #efefef solid;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      &-cardText {
+        font-size: $font-size-lg;
+      }
+      .img-square-wrapper {
+        display: none;
+      }
+    }
+  }
 }
