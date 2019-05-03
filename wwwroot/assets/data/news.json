@@ -40,7 +40,7 @@
       "category": "News",
       "details": "The NHL announced on Thursday that Commissioner Gary Bettman has upheld the 20-game suspension issued to Tom Wilson for  [...]",
       "status": " ",
-      "url": "http://via.placeholder.com/150x120"
+      "url": "http://via.placeholder.com/150x100"
     },
     {
       "title": "United Heroes League, NHLPA Announce All-Star Hero Campaign",
@@ -48,7 +48,7 @@
       "category": "News",
       "details": "asdfasdf",
       "status": " ",
-      "url": "http://via.placeholder.com/150x120"
+      "url": "http://via.placeholder.com/150x100"
     },
     {
       "title": "Blackhawks fire head coach Quenneville",
@@ -56,7 +56,7 @@
       "category": "News",
       "details": "asdfasdf",
       "status": " ",
-      "url": "http://via.placeholder.com/150x120"
+      "url": "http://via.placeholder.com/150x100"
     },
     {
       "title": "Blackhawks fire head coach Quenneville",
@@ -64,7 +64,7 @@
       "category": "News",
       "details": "asdfasdf",
       "status": " ",
-      "url": "http://via.placeholder.com/150x120"
+      "url": "http://via.placeholder.com/150x100"
     }
   ],
   "recentupdates": [
@@ -72,7 +72,7 @@
       "title": "Flyers fire GM Ron Hextall ",
       "date": "Oct 5, 2018",
       "category": "News",
-      "details": "The NHL announced on Thursday that Commissioner Gary Bettman has upheld the 20-game suspension issued to Tom Wilson for  [...]",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua [...]",
       "status": " ",
       "url": "http://via.placeholder.com/270x180"
     },
@@ -80,7 +80,7 @@
       "title": "United Heroes League, NHLPA Announce All-Star Hero Campaign",
       "date": "Oct 5, 2018",
       "category": "News",
-      "details": "asdfasdf",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua [...]",
       "status": " ",
       "url": "http://via.placeholder.com/270x180"
     },
@@ -88,9 +88,51 @@
       "title": "Blackhawks fire head coach Quenneville",
       "date": "Oct 5, 2018",
       "category": "News",
-      "details": "asdfasdf",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua [...]",
       "status": " ",
       "url": "http://via.placeholder.com/270x180"
+    }
+  ],
+  "dailyNews": [
+    {
+      "title": "Oilers Fire Mclellan, Hire Hitchcock As New Head Coach",
+      "date": "Oct 5, 2018",
+      "category": "News",
+      "details": "The NHL announced on Thursday that Commissioner Gary Bettman has upheld the 20-game suspension issued to Tom Wilson for  [...]",
+      "status": "sub-feature",
+      "url": "http://via.placeholder.com/65x127"
+    },
+    {
+      "title": "Nhl Suspends Brendan Lemieux Two Games For Illegal Check [...]",
+      "date": "Oct 5, 2018",
+      "category": "News",
+      "details": "asdfasdf",
+      "status": "sub-feature",
+      "url": "http://via.placeholder.com/65x127"
+    },
+    {
+      "title": "Flyers fire head coach Dave Hakstol",
+      "date": "Oct 5, 2018",
+      "category": "News",
+      "details": "asdfasdf",
+      "status": "sub-feature",
+      "url": "http://via.placeholder.com/65x127"
+    },
+    {
+      "title": "Nhl Suspends Brendan Lemieux Two Games For Illegal Check [...]",
+      "date": "Oct 5, 2018",
+      "category": "News",
+      "details": "asdfasdf",
+      "status": "sub-feature",
+      "url": "http://via.placeholder.com/65x127"
+    },
+    {
+      "title": "Flyers fire head coach Dave Hakstol",
+      "date": "Oct 5, 2018",
+      "category": "News",
+      "details": "asdfasdf",
+      "status": "sub-feature",
+      "url": "http://via.placeholder.com/65x127"
     }
   ]
 }

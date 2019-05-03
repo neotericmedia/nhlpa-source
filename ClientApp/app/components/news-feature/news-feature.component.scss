@@ -4,5 +4,26 @@
 p {
   font-size: $font-size-sm;
   display: block;
-  @include margin(20px, null, null, null)
+  @include margin(20px, null, null, null);
+}
+
+.newsFeedShort {
+  &::ng-deep {
+    &.m-card-white {
+      .img-square-wrapper {
+        box-sizing: border-box;
+        @include padding(17px, 17px, 17px, 17px);
+      }
+      :hover {
+        background: $color-black;
+        color: $color-white;
+      }
+      p {
+        display: none;
+      }
+      .card-body {
+        @include padding(null, null, null, 0.25rem !important);
+      }
+    }
+  }
 }

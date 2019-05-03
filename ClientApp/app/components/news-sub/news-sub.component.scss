@@ -16,13 +16,15 @@
 }
 
 .m-col4 {
-  &:first-child {
-    @include padding(null, 0px, null, null);
-  }
-  &:nth-child(2) {
-    @include padding(null, 7px, null, 7px);
-  }
-  &:nth-child(3) {
-    @include padding(null, null, null, 0px);
+  @include breakpoint(sm) {
+    &:first-child {
+      @include padding(null, 0px, null, null);
+    }
+    &:nth-child(2) {
+      @include padding(null, 7px, null, 7px);
+    }
+    &:nth-child(3) {
+      @include padding(null, null, null, 0px);
+    }
   }
 }
