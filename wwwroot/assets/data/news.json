@@ -1,12 +1,14 @@
 {
-  "feature": {
-    "title": "NHL Suspends Tyler Bertuzzi Two Games for Roughing and Unsportsmanlike Conduct",
-    "date": "Oct 5, 2018",
-    "category": "News",
-    "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniaquis ostrud ipsum dolor sit amet [...]",
-    "status": "feature",
-    "url": "http://localhost:5000/assets/nhl-suspends-tyler-bertuzzi-two-games.jpg"
-  },
+  "feature": [
+    {
+      "title": "NHL Suspends Tyler Bertuzzi Two Games for Roughing and Unsportsmanlike Conduct",
+      "date": "Oct 5, 2018",
+      "category": "News",
+      "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniaquis ostrud ipsum dolor sit amet [...]",
+      "status": "feature",
+      "url": "http://localhost:5000/assets/nhl-suspends-tyler-bertuzzi-two-games.jpg"
+    }
+  ],
   "main": [
     {
       "title": "Oilers Fire Mclellan, Hire Hitchcock As New Head Coach",
@@ -35,7 +37,7 @@
   ],
   "subfeature": [
     {
-      "title": "Flyers fire GM Ron Hextall ",
+      "title": "Flyers fire GM Ron Hextall",
       "date": "Oct 5, 2018",
       "category": "News",
       "details": "The NHL announced on Thursday that Commissioner Gary Bettman has upheld the 20-game suspension issued to Tom Wilson for  [...]",

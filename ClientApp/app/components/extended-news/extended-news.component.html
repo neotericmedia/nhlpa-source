@@ -3,11 +3,11 @@
   <div class="row">
     <div class="col-lg-9">
       <h3 class="a-h3">Recent Updates</h3>
-      <app-news-feed class="newsFeedLong" *ngFor="let item of news?.recentupdates" [item]="item"></app-news-feed>
+      <app-news-feed class="extended-news-lg" *ngFor="let item of news?.recentupdates" [item]="item"></app-news-feed>
     </div>
     <div class="col-lg-3">
       <h3 class="a-h3">Daily Headlines</h3>
-      <app-news-feed class="newsFeedShort" *ngFor="let item of news?.dailyNews" [item]="item"></app-news-feed>
+      <app-news-feed class="extended-news-sm" *ngFor="let item of news?.dailyNews" [item]="item"></app-news-feed>
     </div>
   </div>
   

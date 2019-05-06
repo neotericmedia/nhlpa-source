@@ -21,20 +21,3 @@ p {
 a {
   color: $link-color;
 }
-
-.card-horizontal {
-  display: flex;
-  flex: 1 1 auto;
-}
-
-.btn-sm, .btn-group-sm > .btn {
-  padding: 0rem 0.25rem !important;
-  font-size: $font-size-tiny-1 !important;
-  line-height: 1.5;
-  border-radius: 0.2rem;
-}
-
-.btn-outline-secondary {
-  color: #6c757d;
-  border-color: $color-nhlpa-blue !important;
-}

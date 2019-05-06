@@ -1,0 +1,113 @@
+// Global news feed styles
+.news-module {
+  @include margin(null, null, 5px, null);
+  border: none;
+  border-radius: 0;
+  &:hover {
+    cursor: pointer;
+  }
+  .card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+  }
+  h5 {
+    &:hover {
+      color: aqua;
+    }
+  }
+  .btn-sm,
+  .btn-group-sm > .btn {
+    padding: 0rem 0.25rem !important;
+    font-size: $font-size-tiny-1 !important;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+  }
+  .btn-outline-secondary {
+    color: #6c757d;
+    border-color: $color-nhlpa-blue !important;
+  }
+}
+
+// Featured Item
+.feature-lg .card {
+  @extend .news-module;
+  background: $color-black;
+  color: $color-white;
+  h5 {
+    font-size: $font-size-xx-lg;
+    font-weight: bold;
+  }
+  .card-horizontal {
+    display: inline;
+  }
+  p {
+    font-size: $font-size-sm;
+    display: block;
+    @include margin(20px, null, null, null);
+  }
+}
+
+// Featured feed
+.feature-sm .card {
+  @extend .news-module;
+  background: $color-gray-lighter-shade-custom-4;
+  .img-square-wrapper {
+    box-sizing: border-box;
+    @include padding(17px, 17px, 17px, 17px);
+  }
+  .card-body {
+    @include padding(null, null, null, 0.25rem !important);
+    max-width: 261px;
+  }
+  &:hover {
+    background: $color-black;
+    color: $color-white;
+  }
+  h5 {
+    font-size: $font-size-md;
+    font-family: $font-family-Oswald400;
+  }
+  p {
+    display: none;
+  }
+}
+
+// Extended news feed large
+app-news-feed.extended-news-lg:last-child() article.card {
+  border-bottom: none;
+}
+.extended-news-lg .card {
+  @extend .news-module;
+  @include padding(10px, null, 15px, null);
+  border-bottom: 1px #efefef solid;
+  .card-body {
+    max-width: 521px;
+  }
+  h5 {
+    font-size: $font-size-lg;
+    font-family: $font-family-Roboto;
+  }
+}
+// Extended news feed small
+.extended-news-sm .card {
+  @extend .news-module;
+  border-bottom: 1px #efefef solid;
+  height: 136px;
+  .img-square-wrapper {
+    position: absolute;
+    width: 60px;
+    height: 120px;
+    right: 6px;
+  }
+  .card-body {
+    @include padding(null, null, null, 0.25rem !important);
+    max-width: 180px;
+  }
+  h5 {
+    font-size: $font-size-md;
+    font-family: $font-family-Oswald400;
+  }
+  p {
+    display: none;
+  }
+}
