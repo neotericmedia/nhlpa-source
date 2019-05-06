@@ -1,4 +1,6 @@
-// Global news feed styles
+// ==========================================================================
+// Global news Styles
+// ==========================================================================
 .news-module {
   @include margin(null, null, 5px, null);
   border: none;
@@ -28,7 +30,9 @@
   }
 }
 
-// Featured Item
+// ==========================================================================
+// Featured news Styles
+// ==========================================================================
 .feature-lg .card {
   @extend .news-module;
   background: $color-black;
@@ -46,8 +50,7 @@
     @include margin(20px, null, null, null);
   }
 }
-
-// Featured feed
+// small feed
 .feature-sm .card {
   @extend .news-module;
   background: $color-gray-lighter-shade-custom-4;
@@ -71,8 +74,9 @@
     display: none;
   }
 }
-
-// Extended news feed large
+// ==========================================================================
+// Extended news Styles
+// ==========================================================================
 app-news-feed.extended-news-lg:last-child() article.card {
   border-bottom: none;
 }
@@ -88,7 +92,7 @@ app-news-feed.extended-news-lg:last-child() article.card {
     font-family: $font-family-Roboto;
   }
 }
-// Extended news feed small
+// small
 .extended-news-sm .card {
   @extend .news-module;
   border-bottom: 1px #efefef solid;
@@ -102,6 +106,53 @@ app-news-feed.extended-news-lg:last-child() article.card {
   .card-body {
     @include padding(null, null, null, 0.25rem !important);
     max-width: 180px;
+  }
+  h5 {
+    font-size: $font-size-md;
+    font-family: $font-family-Oswald400;
+  }
+  p {
+    display: none;
+  }
+}
+
+// ==========================================================================
+// Extended featured news Styles
+// ==========================================================================
+.extended-feature-lg .card {
+  @extend .news-module;
+  background: $color-black;
+  color: $color-white;
+  h5 {
+    font-family: $font-family-Oswald400;
+    font-size: $font-size-xx-lg;
+    font-weight: bold;
+  }
+  .card-horizontal {
+    display: inline;
+  }
+  p {
+    font-size: $font-size-sm;
+    display: block;
+    @include margin(20px, null, null, null);
+  }
+}
+// small feed
+.extended-feature-sm .card {
+  @extend .news-module;
+  background: $color-black;
+  color: $color-white;
+  text-align: center;
+  height: 161px;
+  .img-square-wrapper {
+    display: none;
+  }
+  .card-body {
+    @include padding(null, null, null, null);
+  }
+  &:hover {
+    background: $color-black;
+    color: $color-white;
   }
   h5 {
     font-size: $font-size-md;

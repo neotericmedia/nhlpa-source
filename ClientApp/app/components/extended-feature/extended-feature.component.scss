@@ -1,0 +1,14 @@
+@import "../../smacss/utilities/variables/variables";
+@import "../../smacss/utilities/mixins/mixins";
+
+.col-8 {
+  @include breakpoint(sm) {
+    @include padding(null, 4px, null, null);
+  }
+}
+
+.col-4 {
+  @include breakpoint(sm) {
+    @include padding(null, null, null, 4px);
+  }
+}

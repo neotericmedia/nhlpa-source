@@ -4,6 +4,12 @@
     <div class="col-lg-12">
       <h3 class="a-h3">NHLPA.COM Features</h3>
     </div>
+    <div class="col-sm-12 col-md-12 col-lg-8 col-8">
+      <app-news-feed class="extended-feature-lg" *ngFor="let item of news?.NHLPA" [item]="item"></app-news-feed>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-4 col-4">
+      <app-news-feed class="extended-feature-sm" *ngFor="let item of news?.subfeature" [item]="item"></app-news-feed>
+    </div>
 
   </div>
 </section>
