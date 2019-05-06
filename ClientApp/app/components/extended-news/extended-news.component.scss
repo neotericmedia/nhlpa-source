@@ -2,7 +2,7 @@
 @import "../../smacss/utilities/mixins/mixins";
 
 // todo - combine these classes. use a include for similar properties
-.newsFeedLong {
+.module {
   &:last-child() ::ng-deep .m-card-white {
     border-bottom: none;
   }
@@ -14,8 +14,6 @@
       padding-bottom: 10px;
       &-cardText {
         font-size: $font-size-lg;
-        font-weight: bold;
-        font-family: $font-family-Roboto;
       }
       &-cardText:hover {
         color: aqua;
@@ -23,27 +21,30 @@
     }
   }
 }
-
-.newsFeedShort {
-  &:last-child() ::ng-deep .m-card-white {
-    border-bottom: none;
-  }
+.newsFeedLong {
+  @extend .module;
   &::ng-deep {
     &.m-card-white {
-      background: $color-white;
-      border-bottom: 1px #efefef solid;
-      height: 136px;
       &-cardText {
-        font-size: $font-size-lg;
+        font-weight: bold;
+        font-family: $font-family-Roboto;
       }
-      &-cardText:hover {
-        color: aqua;
-      }
+    }
+  }
+}
+.newsFeedShort {
+  @extend .module;
+  &::ng-deep {
+    &.m-card-white {
+      height: 136px;
       .img-square-wrapper {
         position: absolute;
         width: 60px;
         height: 120px;
         right: 6px;
+      }
+      h5 {
+        font-size: $font-size-md !important;
       }
       p {
         display: none;
